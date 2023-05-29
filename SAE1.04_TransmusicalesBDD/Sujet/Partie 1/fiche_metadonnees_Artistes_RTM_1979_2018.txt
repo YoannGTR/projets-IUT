@@ -1,0 +1,94 @@
+
+====================================================================================
+      IDENTIFICATION
+====================================================================================
+
+Liste exhaustive des concerts et spectacles d'artistes, groupes ou compagnies programmés au festival des Rencontres Trans Musicales de Rennes depuis sa première édition en juin 1979.
+
+
+Open_data_Artistes_Rencontres_Trans_Musicales_1979_2018.csv
+
+===================================================================================
+      DESCRIPTION
+===================================================================================
+
+Ce fichier présente l'ensemble des concerts et spectacles faisant partie de la programmation du festival des Rencontres Trans Musicales de Rennes depuis sa première édition en 1979.
+
+==================================================================================
+      INFORMATIONS TECHNIQUES
+===================================================================================
+
+Date de validitÈ :              -
+
+Date de derniËre mise ‡ jour :  22/02/2019
+
+Frequence de mise ‡ jour : annuelle
+
+
+Modification de la structure du fichier depuis la derniËre publication : non
+
+===================================================================================
+      ATTRIBUTS
+===================================================================================
+liste des champs avec pour chacun le nom du champ et son explication
+
+Exemple :
+
+ANNEE      : année de passage de l'artiste / du groupe / de la compagnie 
+EDITION RENCONTRES TRANS MUSICALES : numéro d'édition du festival à Rennes ou nom du projet à l'international
+ARTISTES    : nom de l'artiste / du groupe / de la compagnie
+NOM SPECTACLE OU SOIRÉE   : nom du spectacle, s'il en a un, ou de la soirée dans lequel le concert s'inscrit
+1ER PROJET ATM  : nom du projet de l'Association Trans Musicales dans lequel s'inscrit le premier concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+1ERE DATE  : date du premier concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition 1ERE SALLE : nom de la salle du premier concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+1ERE VILLE : nom de la ville où a eu lieu le premier concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+
+2EME PROJET : nom du projet de l'Association Trans Musicales dans lequel s'inscrit le deuxième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+2EME DATE :  date du deuxième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition  
+2EME SALLE : nom de la salle du deuxième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition 
+2EME VILLE : nom de la ville où a eu lieu le deuxième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+
+3EME PROJET : nom du projet de l'Association Trans Musicales dans lequel s'inscrit le troisième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+3EME DATE :  date du troisième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition  
+3EME SALLE : nom de la salle du troisième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition 
+3EME VILLE : nom de la ville où a eu lieu le troisième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+
+4EME PROJET : nom du projet de l'Association Trans Musicales dans lequel s'inscrit le quatrième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+4EME DATE :  date du quatrième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition  
+4EME SALLE : nom de la salle du quatrième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition 
+4EME VILLE : nom de la ville où a eu lieu le quatrième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+
+5EME PROJET : nom du projet de l'Association Trans Musicales dans lequel s'inscrit le cinquième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+5EME DATE :  date du cinquième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition  
+5EME SALLE : nom de la salle du cinquième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition 
+5EME VILLE : nom de la ville où a eu lieu le cinquième concert ou spectacle de l'artiste / du groupe / de la compagnie lors de cette édition
+ 
+ORIGINES PAYS 1 : pays d'origine de l'artiste, des membres du groupe ou de la compagnie
+ORIGINES PAYS 2 : autre pays d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+ORIGINES PAYS 3 : autre pays d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+ORIGINES PAYS 4 : autre pays d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+
+ORIGINES VILLE 1 : ville d'origine de l'artiste, des membres du groupe ou de la compagnie
+ORIGINES VILLE 2 : autre ville d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+ORIGINES VILLE 3 : autre ville d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+ORIGINES VILLE 4 : autre ville d'origine de l'artiste, d'une partie des membres du groupe ou de la compagnie
+
+ANNEE DE FORMATION : année ou époque des débuts de l'artiste ou de formation du groupe ou de la compagnie
+
+1ERE SORTIE DISCOGRAPHIQUE : première sortie discographique de l'artiste / du groupe
+
+
+================================================================================
+      CONTACTS
+=================================================================================
+
+Erwan Gouadec, 02 99 31 12 10, erwan.gouadec@lestrans.com 
+
+
+=================================================================================
+      INFORMATIONS LEGALES
+================================================================================
+
+PropriÈtaire : nom de la collectivitÈ ou de l'organisme propriÈtaire de la donnÈe
+
+ASSOCIATION TRANS MUSICALES
+Licence : ODbL
