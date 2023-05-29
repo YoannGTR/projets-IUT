@@ -13,7 +13,7 @@ Elaboration d'une base de donnée pour les transmusicales.
 
 ## Etapes
 - Création d'un diagramme UML
-- Traduction de ce diagremme en SQL
+- Traduction de ce diagramme en SQL
 
 ## Description
 
