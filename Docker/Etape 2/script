@@ -1,0 +1,97 @@
+#!/usr/bin/bash
+
+
+rm -rf /DOCKER/yoagautier/*
+cp -R ./ /DOCKER/yoagautier/
+
+# # RECUP LES IMAGES
+docker image pull sae103-php:latest
+docker image pull sae103-qrcode:latest
+docker image pull sae103-html2pdf:latest
+docker image pull sae103-imagick:latest
+
+
+#qrcode FINI
+echo "qrcode"
+dossExiste=$(ls /DOCKER/yoagautier/NE_PAS_TOUCHER/ | egrep ^"CODES_QR"$)
+if test "$dossExiste" = ""
+then
+    mkdir /DOCKER/yoagautier/NE_PAS_TOUCHER/CODES_QR
+fi
+for i in $(cut -d':' -f 1 < /DOCKER/yoagautier/DONNEES/regions.conf)
+do
+    if test "$i" != "numero"
+    then
+        docker container run --rm -v /DOCKER/yoagautier/:/work sae103-qrcode qrcode -o ./NE_PAS_TOUCHER/CODES_QR/"$i".png "https://bigbrain.biz/$i"
+    fi
+done
+
+
+#imagick
+
+echo "tester imagick"
+# sleep 5
+dossExiste1=$(ls /DOCKER/yoagautier/DONNEES/| egrep ^"photos_employes"$)
+if test "$dossExiste1" = ""
+then
+    mkdir /DOCKER/yoagautier/DONNEES/photos_employes
+fi
+dossExiste2=$(ls /DOCKER/yoagautier/NE_PAS_TOUCHER/| egrep ^"photosGen"$)
+if test "$dossExiste2" = ""
+then
+    mkdir /DOCKER/yoagautier/NE_PAS_TOUCHER/photosGen
+fi
+for fic in $(ls /DOCKER/yoagautier/DONNEES/photos_employes/*.svg | cut -d '/' -f 6 | cut -d'.' -f 1)
+do
+    echo $fic
+    
+    docker container run --rm -v /DOCKER/yoagautier/:/work sae103-imagick "magick ./DONNEES/photos_employes/$fic.svg -colorspace gray -shave 7% -resize 200x200 ./NE_PAS_TOUCHER/photosGen/$(echo $fic | tr [:lower:] [:upper:]).png"
+done
+
+
+
+
+#PHP et Html2PDF
+echo "php et Html2PDF"
+# sleep 5
+dossExiste3=$(ls /DOCKER/yoagautier/NE_PAS_TOUCHER/ | egrep ^"HtmlGen"$)
+if test "$dossExiste3" = ""
+then
+    mkdir /DOCKER/yoagautier/NE_PAS_TOUCHER/HtmlGen
+fi
+dossExiste4=$(ls /DOCKER/yoagautier/ | egrep ^"PdfGen"$)
+if test "$dossExiste4" = ""
+then
+    mkdir /DOCKER/yoagautier/PdfGen
+fi
+
+
+for iso in $(cut -d':' -f 1 < /DOCKER/yoagautier/DONNEES/regions.conf)
+do
+    if test "$iso" != "numero"
+    then
+        echo $iso
+        region=$(egrep $iso < /DOCKER/yoagautier/DONNEES/regions.conf | cut -d':' -f 2)
+        echo "$region"
+        if test "$(ls /DOCKER/yoagautier/DONNEES/fichiers_regions/*.txt | egrep "$region")" != ""
+        then
+            docker container run --rm -v /DOCKER/yoagautier/:/work sae103-php php -f ./NE_PAS_TOUCHER/script.php ./DONNEES/fichiers_regions/"$region".txt
+
+            docker container run --rm -v /DOCKER/yoagautier/:/work sae103-php php -f ./NE_PAS_TOUCHER/script2.php texte.dat tableau.dat comm.dat > /DOCKER/yoagautier/NE_PAS_TOUCHER/HtmlGen/$iso.html
+
+            docker container run --rm -v /DOCKER/yoagautier/:/work sae103-html2pdf "html2pdf ./NE_PAS_TOUCHER/HtmlGen/$iso.html ./PdfGen/$iso.pdf"
+            mv /DOCKER/yoagautier/PdfGen/$iso.pdf /DOCKER/yoagautier/PdfGen/$iso-"$region".pdf
+        else
+            echo "le fichier "$region".txt n'existe pas"
+        fi
+    fi
+done
+
+
+
+cp -R /DOCKER/yoagautier/PdfGen PdfGen
+
+tar czvf PDF_Regions.tar.gz PdfGen/
+rm -rf ./PdfGen
+rm -f /DOCKER/yoagautier/NE_PAS_TOUCHER/texte.dat /DOCKER/yoagautier/NE_PAS_TOUCHER/tableau.dat /DOCKER/yoagautier/NE_PAS_TOUCHER/comm.dat 
+rm -rf /DOCKER/yoagautier/*

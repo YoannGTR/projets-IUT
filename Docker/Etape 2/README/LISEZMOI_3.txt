@@ -1,0 +1,35 @@
+DOCUMENTATION du script de génération de QRCODE
+
+Le script va générer un qrcode vers une page de la société : https://bigbrain.biz/<code_region> à partir du fichier regions.conf
+
+Ligne 1 : Pour préciser à linux que l'interpréteur de commandes utilisé est bash
+- #!/bin/bash
+
+Ligne 2 : Permet de préciser à quel étape du script on se situe
+- echo "qrcode"
+
+Ligne 3 : Permet de récupérer l'image Docker permettant de récupérer la syntaxe et donc générer les différents PDF.
+- “docker image pull sae103-qrcode:latest"
+
+Ligne 4 : Crée une variable nommé "dossExiste" qui liste les fichiers ou dossier commencant et terminant uniquement par "CODES_QR",
+donc uniquement les dossier ou fichier avec comme nom "CODES_QR".
+- dossExiste=$(ls /DOCKER/yoagautier/NE_PAS_TOUCHER/ | egrep ^"CODES_QR"$)
+
+Ligne 5 à 8 : Vérification si le dossier "CODES_QR" existe ou non (si $dossExiste = "" créer le dossier "CODES_QR" sinon rien faire)
+- if test "$dossExiste" = ""
+then
+   mkdir /DOCKER/yoagautier/PdfGen
+fi
+
+Ligne 9 : Boucle qui va aller chercher dans le dossier DONNEES le fichier regions.conf.
+- for i in $(cut -d':' -f 1 < /DOCKER/yoagautier/DONNEES/regions.conf)
+
+Ligne 10 à 12 : Permet de ne pas prendre en compte la première ligne du fichier regions.conf 
+do
+   if test "$i" != "numero"
+
+Ligne 13 à 17 : Génère les différents QrCodes
+- then
+        docker container run --rm -v /DOCKER/yoagautier/:/work sae103-qrcode qrcode -o ./NE_PAS_TOUCHER/CODES_QR/"$i".png "https://bigbrain.biz/$i"
+    fi
+done

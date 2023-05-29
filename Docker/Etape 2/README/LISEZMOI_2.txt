@@ -1,0 +1,46 @@
+DOCUMENTATION du script Imagick “scriptIMAGICK”
+
+Grâce à ce script en Bash il est possible de modifiet une image en nuances de gris et convertir en png pour chaque fichier en .svg des différents employés à partir 
+de l'image Docker fournit : sae103-imagick.
+
+Explication pour chaque ligne du script de génération de png :
+
+Ligne 1 : Pour préciser à linux que l'interpréteur de commandes utilisé est bash
+- #!/bin/bash
+
+Ligne 2 : Permet de préciser à quel étape du script on se situe
+- echo "tester imagick"
+
+Ligne 3 : Permet de récupérer l'image Docker permettant de récupérer la syntaxe et donc générer les différentes image PNG.
+- “docker image pull sae103-imagick”
+
+Ligne 4 : Crée une variable nommé "dossExiste1" qui liste les fichiers ou dossier commencant et terminant uniquement par "photos_employes",
+donc uniquement les dossier ou fichier avec comme nom "photos_employes".
+- dossExiste1=$(ls /DOCKER/yoagautier/DONNEES/| egrep ^"photos_employes"$)
+
+Ligne 5 à 8 : Vérification si le dossier "photos_employes" existe ou non (si $dossExiste4 = "" créer le dossier "photos_employes" sinon rien faire)
+- if test "$dossExiste1" = ""
+then
+   mkdir /DOCKER/yoagautier/DONNEES/photos_employes
+fi
+
+Ligne 9 : Crée une variable nommé "dossExiste2" qui liste les fichiers ou dossier commencant et terminant uniquement par "photosGen",
+donc uniquement les dossier ou fichier avec comme nom "photosGen".
+- dossExiste2=$(ls /DOCKER/yoagautier/NE_PAS_TOUCHER/| egrep ^"photosGen"$)
+
+Ligne 10 : Vérification si le dossier "photosGen" existe ou non (si $dossExiste2 = "" créer le dossier "photosGen" sinon rien faire)
+- if test "$dossExiste2" = ""
+then
+    mkdir /DOCKER/yoagautier/NE_PAS_TOUCHER/photosGen
+fi
+
+Ligne 15 : Boucle qui va aller chercher dans le dossier photos_employes les images ayant comme extension SVG . Le cut -d '/' -f 4 permet
+d'extraire uniquement les images .svg et le cut -d '.' -f 1 sert à extraire uniquement le nom du fichier et non avec l'extension.
+
+- for fic in $(ls /DOCKER/yoagautier/DONNEES/photos_employes/*.svg | cut -d '/' -f 6 | cut -d'.' -f 1)
+
+Ligne 16 à 17 : Ensuite pour chaque fichier trouver, on lance une commande docker qui se charge de convertir le nom du fichier .svg qu'on lui
+donne en un png, ainsi que rogner les bords de la photo pour créer une image au format adapté a la page web et lui appliquer un filtre pour la mettre en nuances de gris puis il faudra préciser le dossier de destination.
+-do 
+     docker container run --rm -v /DOCKER/yoagautier/:/work sae103-imagick "magick ./DONNEES/photos_employes/$fic.svg -colorspace gray -shave 7% -resize 200x200 ./NE_PAS_TOUCHER/photosGen/$(echo $fic | tr [:lower:] [:upper:]).png"
+done

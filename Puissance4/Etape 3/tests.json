@@ -1,0 +1,1118 @@
+[
+    {
+        "test_num": 0,
+        "test_label": "patern",
+        "file_name": "pattern.c",
+        "goal": 
+        {
+            "type": "int",
+            "val": "-3"
+        },
+        "args": 
+        [
+            {
+                "type": "int",
+                "val": "4"
+            },
+            {
+                "type": "int",
+                "val": "-7"
+            }
+            
+        ]
+    },
+    
+    {
+        "test_num": 1.0,
+        "test_label": "Test de la procédure initGrille, ce qu'elle renvoie",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "grille",
+            "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                    ["_", "_", "_", "_", "_", "_", "_"], 
+                    ["_", "_", "_", "_", "_", "_", "_"],  
+                    ["_", "_", "_", "_", "_", "_", "_"],  
+                    ["_", "_", "_", "_", "_", "_", "_"], 
+                    ["_", "_", "_", "_", "_", "_", "_"]]
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["","","","","","",""],
+                        ["","","","","","",""],
+                        ["","","","","","",""],
+                        ["","","","","","",""],
+                        ["","","","","","",""],
+                        ["","","","","","",""]]
+            }
+        ]
+    },
+
+
+    {
+        "test_num": 2.0,
+        "test_label": "Test de la procedure afficherGrille, ce qu'elle affiche. Debut de partie",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": 
+            "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+            verticalement ou diagonalement le premier.\n
+            \n
+            DÉROULEMENT DU JEU\n
+            Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+            choisissent la colonne dans laquelle ils souhaitent placer leur\n
+            jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+            La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+            arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+            plus d’emplacement disponible pour le jetons.\n
+            \n
+                         x              \n
+            [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+            [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+            [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+            [_] [_] [_] [_] [_] [_] [_]   ESPACE : placer le jeton\n
+            [_] [_] [_] [_] [_] [_] [_] \n
+            [_] [_] [_] [_] [_] [_] [_] \n"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 2.1,
+        "test_label": "Test de la procedure afficherGrille, ce qu'elle affiche. Millieu de partie",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": 
+            "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+            verticalement ou diagonalement le premier.\n
+            \n
+            DÉROULEMENT DU JEU\n
+            Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+            choisissent la colonne dans laquelle ils souhaitent placer leur\n
+            jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+            La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+            arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+            plus d’emplacement disponible pour le jetons.\n
+            \n
+                         x              \n
+            [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+            [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+            [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+            [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+            [_] [_] [x] [x] [o] [_] [_] \n
+            [_] [_] [o] [x] [o] [_] [o] \n"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 2.21,
+        "test_label": "Test de la procedure afficherGrille, ce qu'elle affiche. Fin de partie victoire",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": 
+            "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+            verticalement ou diagonalement le premier.\n
+            \n
+            DÉROULEMENT DU JEU\n
+            Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+            choisissent la colonne dans laquelle ils souhaitent placer leur\n
+            jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+            La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+            arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+            plus d’emplacement disponible pour le jetons.\n
+            \n
+                         o              \n
+            [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+            [_] [_] [_] [x] [o] [_] [_]   Q : déplacer le jeton vers la gauche\n
+            [_] [_] [_] [x] [x] [o] [_]   D : déplacer le jeton vers la droite\n
+            [_] [_] [o] [o] [o] [x] [o]   ESPACE : placer le jeton\n
+            [_] [_] [x] [x] [o] [x] [x] \n
+            [_] [o] [o] [x] [o] [x] [o] \n"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "x", "_", "_", "_"], 
+                        ["_", "_", "_", "x", "x", "o", "_"],  
+                        ["_", "_", "o", "o", "o", "x", "o"],  
+                        ["_", "_", "x", "x", "o", "x", "x"], 
+                        ["_", "o", "o", "x", "o", "x", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "o"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+
+    {
+        "test_num": 2.22,
+        "test_label": "Test de la procedure afficherGrille, ce qu'elle affiche. Fin de partie egalite",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": 
+            "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+            verticalement ou diagonalement le premier.\n
+            \n
+            DÉROULEMENT DU JEU\n
+            Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+            choisissent la colonne dans laquelle ils souhaitent placer leur\n
+            jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+            La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+            arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+            plus d’emplacement disponible pour le jetons.\n
+            \n
+                         x              \n
+            [x] [x] [o] [x] [o] [o] [o]   Commandes :\n
+            [o] [x] [x] [o] [o] [x] [x]   Q : déplacer le jeton vers la gauche\n
+            [o] [o] [x] [x] [x] [o] [x]   D : déplacer le jeton vers la droite\n
+            [x] [x] [o] [o] [o] [x] [o]   ESPACE : placer le jeton\n
+            [o] [o] [x] [x] [o] [x] [x] \n
+            [x] [o] [o] [x] [o] [x] [o] \n"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["x", "x", "o", "x", "o", "o", "o"], 
+                        ["o", "x", "x", "o", "o", "x", "x"], 
+                        ["o", "o", "x", "x", "x", "o", "x"],  
+                        ["x", "x", "o", "o", "o", "x", "o"],  
+                        ["o", "o", "x", "x", "o", "x", "x"], 
+                        ["x", "o", "o", "x", "o", "x", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+
+
+    {
+        "test_num": 3.0,
+        "test_label": "Test de la fonction grille pleine. Si la grille est pleine",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "true"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["x", "x", "o", "x", "o", "o", "o"], 
+                        ["o", "x", "x", "o", "o", "x", "x"], 
+                        ["o", "o", "x", "x", "x", "o", "x"],  
+                        ["x", "x", "o", "o", "o", "x", "o"],  
+                        ["o", "o", "x", "x", "o", "x", "x"], 
+                        ["x", "o", "o", "x", "o", "x", "o"]]
+            }
+        ]
+    },
+
+    {
+        "test_num": 3.1,
+        "test_label": "Test de la fonction grille pleine. Si la grille n'est pas pleine",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "false"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            }
+        ]
+    },
+
+    {
+        "test_num": 4.0,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 1 fois sur q, puis sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "3" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                         x                  \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.1,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 1 fois sur d, puis sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "5" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                                 x          \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.2,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 6 fois sur q, puis sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "1" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                 x                          \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.3,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 16 fois sur d, puis une fois sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "7" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                                         x  \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.4,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 10 fois sur d, puis 3 fois sur q, puis une fois sur d, puis 20 fois sur q, puis 50 fois sur d, puis 4 fois sur q, puis 1 fois sur d, puis 2 fois sur q, puis une fois sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "2" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                     x                      \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.5,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie 1 fois sur 5, une fois sur z, unefois sur d, une fois sur !, une fois sur q, une fois sur +, une fois sur 1, une fois sur d, une fois sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "5" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                                 x          \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.6,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie une fois sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "4" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                             x              \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 4.7,
+        "test_label": "Test de la fonction choisirColonne. lorsque l'utilisateur appuie une fois sur 5, puis une fois sur espace",
+        "file_name": "prog.c",
+        "goal": 
+        [
+            {
+               "type": "int",
+                "val": "4" 
+            },
+            {
+                "type": "string",
+                "val": 
+                "BUT du JEU : aligner 4 de ses jetons horizontalement,\n
+                verticalement ou diagonalement le premier.\n
+                \n
+                DÉROULEMENT DU JEU\n
+                Le puissance 4 se joue à 2 joueurs qui jouent chacun leur tour. Ils\n
+                choisissent la colonne dans laquelle ils souhaitent placer leur\n
+                jeton. Le jeton tombe alors à l’emplacement libre le plus bas de la colonne.\n
+                La partie s’arrête avec la victoire de l’un des joueurs lorsqu’il\n
+                arrive à aligner 4 de ses jetons ou par une égalité lorsqu’il n’y a\n
+                plus d’emplacement disponible pour le jetons.\n
+                \n
+                             x              \n
+                [_] [_] [_] [_] [_] [_] [_]   Commandes :\n
+                [_] [_] [_] [_] [_] [_] [_]   Q : déplacer le jeton vers la gauche\n
+                [_] [_] [_] [_] [_] [_] [_]   D : déplacer le jeton vers la droite\n
+                [_] [_] [_] [_] [x] [_] [_]   ESPACE : placer le jeton\n
+                [_] [_] [x] [x] [o] [_] [_] \n
+                [_] [_] [o] [x] [o] [_] [o] \n"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 5.0,
+        "test_label": "Test de la fonction trouverLigne. Lorsque la colonne choisie est pleine",
+        "file_name": "prog.c",
+        "goal":    
+        {
+            "type": "int",
+            "val": "-1" 
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "o", "_", "_", "_"], 
+                        ["_", "_", "_", "x", "_", "_", "_"], 
+                        ["_", "_", "_", "o", "_", "_", "_"],  
+                        ["_", "_", "_", "x", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "4"
+            }
+        ]
+    },
+    {
+        "test_num": 5.1,
+        "test_label": "Test de la fonction trouverLigne. Lorsque la colonne choisie est vide",
+        "file_name": "prog.c",
+        "goal":    
+        {
+            "type": "int",
+            "val": "1" 
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "o", "_", "_", "_"], 
+                        ["_", "_", "_", "x", "_", "_", "_"], 
+                        ["_", "_", "_", "o", "_", "_", "_"],  
+                        ["_", "_", "_", "x", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            }
+        ]
+    },
+    {
+        "test_num": 5.2,
+        "test_label": "Test de la fonction trouverLigne. Lorsque la colonne choisie est partiellement remplie",
+        "file_name": "prog.c",
+        "goal":    
+        {
+            "type": "int",
+            "val": "4" 
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "o", "_", "_", "_"], 
+                        ["_", "_", "_", "x", "_", "_", "_"], 
+                        ["_", "_", "_", "o", "_", "_", "_"],  
+                        ["_", "_", "_", "x", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "5"
+            }
+        ]
+    },
+    {
+        "test_num": 6.0,
+        "test_label": "Test de la procedure jouer. Dans le cas ou choisirColonne donne 1 et que trouverLigne donne 1",
+        "file_name": "prog.c",
+        "goal":    
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["x", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "1"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "7"
+            }
+        ]
+    },
+    {
+        "test_num": 6.1,
+        "test_label": "Test de la procedure jouer. Dans le cas ou choisirColonne donne 5 et que trouverLigne donne 4",
+        "file_name": "prog.c",
+        "goal":    
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "4"
+            },
+            {
+                "type": "int",
+                "val": "5"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "_", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "7"
+            }
+        ]
+    },
+    {
+        "test_num": 6.2,
+        "test_label": "Test de la procedure jouer. Dans le cas ou choisirColonne donne 5 et que trouverLigne donne -1. Le programme redemande alors une colonne et cetet fois colonne renvoie 4 et trouverLigne donne 3",
+        "file_name": "prog.c",
+        "goal":    
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "x", "_", "_"], 
+                        ["_", "_", "_", "_", "o", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "_", "x", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["x", "_", "o", "x", "o", "o", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "1"
+            }
+        ],
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "x", "_", "_"], 
+                        ["_", "_", "_", "_", "o", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "o", "o"]]
+            },
+            {
+                "type": "char",
+                "val": "x"
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "7"
+            }
+        ]
+    },
+    {
+        "test_num": 7.0,
+        "test_label": "Test de la fonction estVainqueur. Pas de victoire",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "faux"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "x", "_", "_"], 
+                        ["_", "_", "_", "_", "o", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "_", "o", "x", "o", "o", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "6"
+            }
+        ]
+    },
+    {
+        "test_num": 7.1,
+        "test_label": "Test de la fonction estVainqueur. victoire des x verticale",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "vrai"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "x", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "o", "o", "x", "o", "o", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "6"
+            },
+            {
+                "type": "int",
+                "val": "5"
+            }
+        ]
+    },
+    {
+        "test_num": 7.2,
+        "test_label": "Test de la fonction estVainqueur. victoire des o horizontale",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "true"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"],  
+                        ["_", "_", "_", "x", "_", "_", "_"],  
+                        ["_", "_", "x", "x", "o", "_", "_"], 
+                        ["_", "x", "x", "o", "o", "o", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "7"
+            }
+        ]
+    },
+    {
+        "test_num": 7.3,
+        "test_label": "Test de la fonction estVainqueur. victoire des x diagonale",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "bool",
+            "val": "true"
+        },
+        "args": 
+        [
+            {
+                "type": "grille",
+                "val": [["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "_", "_", "_"], 
+                        ["_", "_", "_", "_", "x", "_", "_"],  
+                        ["_", "_", "o", "x", "o", "_", "_"],  
+                        ["_", "o", "x", "x", "o", "_", "_"], 
+                        ["_", "x", "x", "o", "x", "o", "o"]]
+            },
+            {
+                "type": "int",
+                "val": "1"
+            },
+            {
+                "type": "int",
+                "val": "7"
+            }
+        ]
+    },
+    {
+        "test_num": 8.0,
+        "test_label": "Test de la procedure finDePartie. Cas ou le x gagne, affiche le message de fin de partie a la place du message du joueur qui joue",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": "\nVICTOIRE : Joueur \"x\" a gagné ! Bien joué à toi !\n"
+        },
+        "args":
+        {
+            "type": "char",
+            "val": "x"
+        }
+    },
+    {
+        "test_num": 8.1,
+        "test_label": "Test de la procedure finDePartie. Cas ou le o gagne, affiche le message de fin de partie a la place du message du joueur qui joue",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": "\nVICTOIRE : Joueur \"o\" a gagné ! Bien joué à toi !\n"
+        },
+        "args":
+        {
+            "type": "char",
+            "val": "o"
+        }
+    },
+    {
+        "test_num": 8.2,
+        "test_label": "Test de la procedure finDePartie. Cas ou personne gagne, affiche le message de fin de partie a la place du message du joueur qui joue",
+        "file_name": "prog.c",
+        "goal": 
+        {
+            "type": "string",
+            "val": "\nEGALITE : Vous ne pouvez plus placer de jetons. La partie est donc terminée mais vous pouvez toujours recommencer :)\n"
+        },
+        "args":
+        {
+            "type": "char",
+            "val": " "
+        }
+    }
+
+]

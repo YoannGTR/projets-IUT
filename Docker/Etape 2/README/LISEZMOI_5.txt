@@ -1,0 +1,68 @@
+DOCUMENTATION du script HTML2PDF “scriptHTML2PDF”
+
+Grâce à ce script en Bash il est possible de générer un pdf pour chaque fichier en .html des différentes régions à partir 
+de l'image Docker fournit : sae103-html2pdf.
+
+Explication pour chaque ligne du script de génération de pdf :
+
+
+- echo "PHP et html2pdf"
+Permet de préciser à quel étape du script on se situe
+
+
+
+- docker image pull sae103-html2pdf
+Permet de récupérer l'image Docker permettant de récupérer la syntaxe et donc générer les différents fichier pdf
+
+
+- dossExiste4=$(ls | egrep ^"PdfGen"$)
+Crée une variable nommé "dossExiste4" qui liste les fichiers ou dossier commencant et terminant uniquement par "PdfGen", donc uniquement les dossier ou fichier avec comme nom "PdfGen".
+
+
+
+- if test "$dossExiste4" = ""
+  then
+     mkdir PdfGen
+  fi
+Vérification si le dossier "PdfGen" existe ou non (si $dossExiste4 = "" créer le dossier "PdfGen" sinon rien faire)
+
+
+
+- for iso in $(cut -d':' -f 1 < /DOCKER/yoagautier/DONNEES/regions.conf)
+  do 
+    ...  
+  done
+Boucle qui va aller chercher dans le fichier regions.conf toutes les lignes. Le cut -d':' -f 1 permet d'extraire uniquement les numéros ISO des départements
+
+
+
+- if test "$iso" != "numero"
+  then
+    ...
+  fi
+Verifie si le code ISO n'est pa numéro. cela permet donc de ne pas prendre en compte la première ligne qui est en fait un en-tête
+
+
+
+- region=$(egrep $iso < /DOCKER/yoagautier/DONNEES/regions.conf | cut -d':' -f 2)
+Assigne à la variable region la 2e colonne de regions.conf, soit le nom de la région
+
+
+
+- if test "$(ls /DOCKER/yoagautier/DONNEES/fichiers_regions/*.txt | egrep "$region")" != ""
+  then
+    ...
+  else
+    echo "le fichier "$region".txt n'existe pas"
+  fi
+Vérifie si le fichier .txt portant le nom de la région existe et envoie une erreur si ce n'est pas le cas
+
+
+
+- docker container run --rm -v /DOCKER/yoagautier/:/work sae103-html2pdf "html2pdf ./NE_PAS_TOUCHER/HtmlGen/$iso.html ./PdfGen/$iso.pdf"
+Fait appel à docker et l'image sae103-html2pdf pour générer les fichiers pdf a partir du fichier html de la region dont on s'occupe
+
+
+
+- mv /DOCKER/yoagautier/PdfGen/$iso.pdf /DOCKER/yoagautier/PdfGen/$iso-"$region".pdf
+Permet de renommer le fichier pour respecter le format désiré

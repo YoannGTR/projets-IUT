@@ -1,0 +1,52 @@
+TACHES_2.txt 
+
+Organisation des taches pour la SAE 1.03 Installation d'un poste pour le développement lors de la semaine 3
+
+Membres : Yoann Gautier, Ethan Mancelon, Pierig Malnoe, Benjamin Conseil
+
+
+- Modification du fichier de configuration regions.conf : enlèvement des espaces entre les 2 points.
+Yoann : 100%
+
+- LIZEZMOI_1.txt
+Yoann : 100%
+
+- Documentation LISEZMOI_FINAL.txt
+Ethan : 50%
+Yoann : 50%
+
+- Conversion imagik
+Ethan : 60 %
+Pierig : 30 %
+Yoann : 10 %
+
+- LISEZMOI_2.txt
+Pierig : 70%
+Benjamin : 30% 
+
+- Génération QRCode
+Yoann 70%
+Benjamin 20%
+Ethan 10%
+
+LISEZMOI_3.txt
+Pierig 90%
+Ethan10%
+
+- Transformation du modèle HTML en un script PHP
+Yoann 100%
+
+LISEZMOI_4.txt
+Yoann 60%
+Benjamin 40%
+
+- Génération du PDF
+Benjamin 100%
+
+LISEZMOI_5.txt
+Benjamin 100%
+
+- Document TACHES_2.txt
+Ethan 60%
+Benjamin 40%
+

@@ -1,0 +1,32 @@
+Organisation des tâches pour la SAE 1.03 Installation d’un poste pour le développement lors de la semaine 1 et 2
+
+Membres : Yoann Gautier, Ethan Mancelon, Pierig Malnoë, Benjamin Conseil
+
+- Prise d’information sur le sujet et organisation:
+Tout d’abord nous avons analysé le projet avec plusieurs relectures du sujet puis élu un “chef de projet” qui est Yoann afin d’avoir une organisation lors de la réalisation du projet.
+
+
+- Création du fichier de configuration regions.conf
+Pour le fichier regions.conf, Yoann a commencé et fourni la syntaxe a prendre, puis Ethan a rempli le fichier en récupérant les données sur le lien Wikipédia fourni.
+Yoann : 25%
+Ethan : 75%
+
+- Création du script php et utilisation de docker
+Yoann s'est occupé seul du script php et de l'image docker sae103-php, tout en expliquant ce qu'il faisait et comment il le faisait a ces camarades. 
+Yoann : 100%
+
+- Création de la maquette
+Ethan et Pierrig ont commencé la maquette, puis Benjamin l'a reprise et l'a finie.
+Ethan : 20%
+Pierrig : 20%
+Benjamin : 60%
+
+- Documentation
+Puisque Yoann était le seul a avoir fait le php, il s'est occupé de la documentation pour pouvoir expliquer au mieux.
+Yoann : 100%
+
+- Document TACHES
+Ethan a commencé, Yoann a continué
+Ethan : 10%
+Yoann : 90%
+

@@ -1,0 +1,50 @@
+DOCUMENTATION SCRIPT BASH PRINCIPAL
+
+Grâce à ce script bash vous allez pouvoir transformer des fichiers de données sur une région en un pdf l'illustrant
+Pour que ce script marche vous allez devoir renseigner ou mettre à jour dans le dossier 
+DONNEES détenant :
+- Le fichier region.conf où vous pouvez modifier les statistiques des régions.
+- Le document fichiers_regions où vous pouvez modifier le texte des régions. 
+- Le document logos_regions où vous pouvez le logo des régions
+- Le document photos_employes où vous pouvez mettre les photos des employés.
+
+Composition du code est constitué de 4 grandes étapes utilisant des images docker:
+
+Tout dabord copie le dossier du script dans le /Docker/yoagautier (après l'avoir vidé) pour pouvoir creer des volumes par la suite
+
+-Génération du qrcode : Le script va générer un qrcode vers une page de la société : https://bigbrain.biz/<code_region> à partir du fichier regions.conf
+Pour plus d'informations et voir comment le code marche rendez vous dans le fichier LISEZMOI_3.txt
+
+
+-Conversion imagik : Le script va réaliser une conversion en PNG en nuances de gris des avatars fournis et un faire changement de taille des images finales pour atteindre une taille de 200x200 pixels.
+Pour plus d'informations et voir comment le code marche rendez vous dans le fichier LISEZMOI_2.txt
+
+-php : Divisé en deux script PHP le premier va diviser le fichier de la région en trois fichier.dat, le deuxième va  fusionner et insérer les données des trois fichier.dat en une page html.
+Pour plus d'informations et voir comment le code marche rendez vous dans le fichier LISEZMOI_4.txt
+
+-Génération html2pdf : Le script va générer le PDF d’une région à partir du fichier html.
+Pour plus d'informations et voir comment le code marche rendez vous dans le fichier LISEZMOI_5.txt
+
+
+Puis recopie les pdf générés vers le dossier du script et les mets dans une archive.
+
+Et enfin finie par faire du nettoyage en supprimant touts les fichiers et dossiers temporaires générés pendant l'execution.
+
+
+
+
+
+Comment utiliser le code :
+
+Etape 1
+Rendez vous sur linux.
+
+Etape 2
+Ouvrez un terminal dans le dossier PDF_Generator en faisant clic droit, "ouvrir un terminal".
+
+
+Etape 3
+Une fois dans le terminal donnez la permission du script en utilisant la commande "chmod +x".
+
+Etape 4
+Executez le script en utilisant la commande "./script".

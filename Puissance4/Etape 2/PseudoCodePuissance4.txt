@@ -1,0 +1,97 @@
+programme puissance4 c'est
+
+
+    procédure afficherInterface();// affiche l'interface de départ avec les regles et les controles
+
+    procédure afficherJoueurJoue(entF joueurCommence : caratère, entF tour : entier, sortE joueurJoue : caractère);//affiche le joueur qui dois jouer en fonction du joueur de base et du nombre de tour
+
+    procédure affichergrille(entF grille : tableau[] de chaine[4]); //affiche la grille 
+
+    procédure lireTouche(sortF touche: caractère); // lis la touche saisie par l'utilisateur sans qu'il aie a appuyer sur entrée
+
+    procédure choisirJoueur(sortF joueurDépart : caractère);//demande quel joueur commence: o ou x( avec vérification)
+
+    procédure deplacement(entF joueurJoue : entier, sortF colonnePlace: entier);/* déplace le jeton au dessus de la grille en faisant appel à la procédure lireTouche. donne la colonne choisie par l'utilisateur */
+    
+    procédure placeJeton(entF colonnePlace, entF/sortF grille : tableau[] de chaine[4]);/* place le jeton dans la case de la colonne choisie. Vérifie si il y a encore de la place dans la colonne (on peut vérifier en ajoutant 1 a une variable et si elle est egale a 6 alors la colonne est pleine). si la colonne est pleine, on met un message d'erreur et on refait appel à la procédure deplacement jusqu'a que ce que il trouve une colonne vide*/
+    
+    procédure verifieVictoire(entF grille : tableau[] de chaine[4], entF/sortF partieFinieV : booléen, sortF joueurVainqueur : caractère);// vérifie si la partie est finie et si c'est le cas sort le nom du vainqueur
+    
+    procedure verifieEgalite(entF grille : tableau[] de chaine[4], entF/sortF partieFinieE : booléen);//verifie si il y a encore des cases disponibles( en ajoutant 1 a chaque fois, fini quand c'est 42)
+    
+    procédure videTerminal();// vide le terminal (effectue un CLEAR du terminal)
+    
+    procédure afficherGrilleFinie(entF grille : tableau[] de chaine[4]);// affiche la grille a la fin du jeu en mettant en valeur les 4(ou+) jetons alignés si il y a une victoire
+    
+    procédure afficherVainqueur(entF JoueurVainqueur : caractère);// affiche le joueur qui a gagné sous la grille
+    
+    procédure afficherEgalite();// affiche un message d'egalité sous la grille
+
+début
+
+    //Définition des variables
+    grilleActuelle : tableau[1..8,1..6] de chaine[4];
+    joueurCommence : caractère;// la partie commence par o ou x
+    colonne : entier;//colonne ou l'on place le jeton, entre 1 et 7
+    partieFinieV : booléen; // true si la partie se finit par la victoire de l'un des joueurs
+    partieFinieE : booléen; //true si la partie se finit avec une égalité
+    tour : entier; //numéro du tour 
+    joueurVainqueur : caractère; // joeur qui a gagné la partié
+    joueurJoue : caractère;// joueur qui joue a ce tour
+    i : entier;
+    j : entier;
+
+    //Initialisation des variables
+    pour i de 1 à 7 pas 1 faire
+        pour j de 1 à 6 pas 1 faire
+            grilleActuelle[i,j] := "[_] ";
+        finfaire
+    finfaire
+    
+    partieFinieE := FAUX;
+    partieFinieV := FAUX;
+    tour := 0;
+    
+
+
+    //Préparation du jeu
+    afficherInterface();//affiche les regles et commandes
+    afficherGrille(entE grilleActuelle);// affiche la grille vierge
+    choisirJoueur(sortE joueurCommence);// determine le joueur qui commence
+
+
+    //JEU
+    tant que (partieFinieV != VRAI ou partieFinieE != VRAI) faire
+        //affichage du jeu
+        videTerminal();
+        tour := tour + 1;
+        afficherInterfacePerm();
+        afficherGrille(entE grilleActuelle);
+        afficherJoueurJoue(entE joueurCommence, entE tour, sortE joueurJoue);// designe le joueur qui doit jouer
+
+        //action du joueur
+        deplacement(entE joueurJoue, sortE colonne);//attribut a colonne le numéro de la colonne choisi par le joueur
+        placeJeton(entE colonne, entE/sortE grilleActuelle);//place le jeton dans l grille
+
+        // vérifiaction
+        verifieVictoire(entE grilleActuelle, entE/sortE partieFinieV, sortE joueurVainqueur);//vérifie si la partie est finie et si c'est le cas sort le nom du vainqueur
+        verifieEgalite(entE grilleActuelle, entE/sortE partieFinieE);//verifie si il y a encore des cases disponibles
+    finfaire
+
+    //fin de partie
+    si (partieFinieV == VRAI) alors
+        videTerminal();
+        afficheInterface();
+        afficherGrilleFinie(entE grilleActuelle);
+        afficherVainqueur(entE JoueurVainqueur);
+
+    sinonsi(partieFinieE == VRAI) alors
+        videTerminal();
+        afficheInterface();
+        afficherGrilleFinie(entE grilleActuelle);
+        afficherEgalite();      
+    finsi
+
+
+fin
+

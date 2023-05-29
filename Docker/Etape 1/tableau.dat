@@ -1,0 +1,47 @@
+	<table>
+		<thead>
+			<tr>
+				<th>Produit</th>
+				<th>Ventes</th>
+				<th>CA trimestre</th>
+				<th>Ventes trimestre an dernier</th>
+				<th>CA trimestre an dernier</th>
+				<th>evolutonCA (%)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>#1</td>
+				<td>201</td>
+				<td>289199</td>
+				<td>190</td>
+				<td>279102</td>
+				<td style = 'color = green' >3.6176738253398 | 10097</td>
+			</tr>
+			<tr>
+				<td>#2</td>
+				<td>90</td>
+				<td>35019</td>
+				<td>93</td>
+				<td>34283</td>
+				<td style = 'color = green' >2.1468366245661 | 736</td>
+			</tr>
+			<tr>
+				<td>#3</td>
+				<td>217</td>
+				<td>191827</td>
+				<td>290</td>
+				<td>281923</td>
+				<td style = 'color = red' >-31.957662198544 | 90096</td>
+			</tr>
+			<tr>
+				<td>#4</td>
+				<td>182</td>
+				<td>162719</td>
+				<td>127</td>
+				<td>108291</td>
+				<td style = 'color = green' >50.260871171196 | 54428</td>
+			</tr>
+		</tbody>
+	</table>
+</section>

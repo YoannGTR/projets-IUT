@@ -1,0 +1,65 @@
+DOCUMENTATION du script php “script2.php”
+
+Ce script en php va fusioner les textes et les parties factices par les  données issues des 3 fichiers en .dat afin de former un fichier html par le biais d'une image Docker sae103-php. Pour chaque fichier de régions fournit, le script permet de produire un document final en HTML.
+
+Explication lancement script php :
+
+
+
+
+- echo "PHP et html2pdf"
+Permet de préciser à quel étape du script on se situe
+
+
+
+- docker image pull sae103-php
+Permet de récupérer l'image Docker permettant de récupérer la syntaxe et donc générer les différents html.
+
+
+
+- dossExiste3=$(ls | egrep ^"HtmlGen"$)
+Crée une variable nommé "dossExiste3" qui liste les fichiers ou dossier commencant et terminant uniquement par "HtmlGen", donc uniquement les dossier ou fichier avec comme nom "HtmlGen".
+
+
+
+- if test "$dossExiste3" = ""
+  then
+     mkdir HtmlGen
+  fi
+Vérification si le dossier "HtmlGen" existe ou non (si $dossExiste3 = "" créer le dossier "HtmlGen" sinon rien faire)
+
+
+
+- for iso in $(cut -d':' -f 1 < /DOCKER/yoagautier/DONNEES/regions.conf)
+  do 
+    ...  
+  done
+Boucle qui va aller chercher dans le fichier regions.conf toutes les lignes. Le cut -d':' -f 1 permet d'extraire uniquement les numéros ISO des départements
+
+
+
+- if test "$iso" != "numero"
+  then
+    ...
+  fi
+Verifie si le code ISO n'est pa numéro. cela permet donc de ne pas prendre en compte la première ligne qui est en fait un en-tête
+
+
+
+- region=$(egrep $iso < /DOCKER/yoagautier/DONNEES/regions.conf | cut -d':' -f 2)
+Assigne à la variable region la 2e colonne de regions.conf, soit le nom de la région
+
+
+
+- if test "$(ls /DOCKER/yoagautier/DONNEES/fichiers_regions/*.txt | egrep "$region")" != ""
+  then
+    ...
+  else
+    echo "le fichier "$region".txt n'existe pas"
+  fi
+Vérifie si le fichier .txt portant le nom de la région existe et envoie une erreur si ce n'est pas le cas
+
+
+
+- docker container run --rm -v /DOCKER/yoagautier/:/work sae103-php php -f ./NE_PAS_TOUCHER/script2.php texte.dat tableau.dat comm.dat > /DOCKER/yoagautier/NE_PAS_TOUCHER/HtmlGen/$iso.html
+Fait appel à docker et l'image sae103-php pour générer un fichier html dans le dossier HtmlGen a partir des fichier .dat dans le dossier principal.

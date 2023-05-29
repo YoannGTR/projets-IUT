@@ -1,0 +1,15 @@
+DOCUMENTATION du fichier PHP “script.php”
+
+
+Grâce à ce script PHP il est possible de générer 3 fichiers au format .dat à partir du fichier regions.conf et du fichier texte de la région, pour toutes les régions. Vous pouvez mettre à jour ces fichiers à votre guise tant que vous respectez leur syntaxe. 
+Les fichiers .dat formés serviront par la suite à générer une page HTML
+
+
+Pour utiliser ce script, ouvrez un terminal dans le dossier contenant le script et tapez les commandes suivantes:
+
+- “sudo docker image pull bigpapoo/sae103-php” 
+Cette commande permet à l'ordinateur de récupérer la version de php la plus optimale pour le code (PHP 7.4). 
+
+- “php -f script.php {nomRégion.txt}” 
+( IMPORTANT: remplacez {nomRégion.txt} par le fichier texte de la région de votre choix). 
+Cette commande permet d'exécuter le script et génère les 3 fichiers .dat pour la région choisie.

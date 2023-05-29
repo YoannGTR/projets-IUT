@@ -1,0 +1,23 @@
+<section>
+	<h1>Nos meilleurs vendeurs du trimestre</h1>
+	<figure>
+			<img src = 'images/JOD.svg' alt='photo d'employé'>
+			<figcaption>John Deuff - 47</figcaption>
+	</figure>
+	<figure>
+			<img src = 'images/DES.svg' alt='photo d'employé'>
+			<figcaption>Debby Scott - 44</figcaption>
+	</figure>
+	<figure>
+			<img src = 'images/MAZ.svg' alt='photo d'employé'>
+			<figcaption>Maude Zarela - 32</figcaption>
+	</figure>
+	<figure>
+			<img src = 'images/SAT.svg' alt='photo d'employé'>
+			<figcaption>Sacha Touille - 25</figcaption>
+	</figure>
+	<figure>
+			<img src = 'images/OUL.svg' alt='photo d'employé'>
+			<figcaption>Oussama Lairbon - 15</figcaption>
+	</figure>
+</section>
