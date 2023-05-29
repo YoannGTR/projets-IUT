@@ -17,7 +17,7 @@ Elaboration d'une base de donnée pour les transmusicales.
 
 ## Description
 
-Ce projet consistait à créer et remplir une base de données pour les festivals transmusicaux.
+Le but de ce projet consistait a concevoir une base de donnée complexe et à la remplir avec des données concernant le festival "Les transmusicaux". Avant toute programmation en sql, nous avons du concevoir la base de données, avec un diagramme UML, pour nous permettre d'avoir une vision plus claire de notre tâche à accomplir. Ensuite, nous avons traduit ce diagramme UML en postgresql afin d'y insérer les données qui nous étais fournis.
 
 ## Information suplémentaires et prise de recul
 
