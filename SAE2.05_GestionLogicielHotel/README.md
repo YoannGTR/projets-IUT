@@ -1,4 +1,4 @@
-# gestion d'unu projet de création de logiciel
+# Gestion d'un projet de création de logiciel
 
 ## Resumé
 
