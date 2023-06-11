@@ -14,7 +14,12 @@ Analyse, planification, répartition des taches...
 
 ## Etapes
 
-En cours...
+- Rédaction d'une note de cadrage et d'une SEL
+- Création d'un Organigramme des Taches
+- Elaboration d'une matrice RACI
+- Estimation des charges
+- Plannification du digramme de Gantt
+- ...
 
 ## Description
 
@@ -22,6 +27,6 @@ En cours...
 
 ## Information suplémentaires et prise de recul
 
-Ce projet était en colaboration avec [Benjamin Conseil](https://github.com/conseil-benjamin), [Ethan Mancelon](https://github.com/EthanMancelon), [Pierrig Malnoë](https://github.com/VenomSE30).  
+Ce projet est en colaboration avec [Benjamin Conseil](https://github.com/conseil-benjamin), [Ethan Mancelon](https://github.com/EthanMancelon), [Pierrig Malnoë](https://github.com/VenomSE30).  
 
 En cours...
