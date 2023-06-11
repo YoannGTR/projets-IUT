@@ -14,14 +14,24 @@ Ce logiciel est destiné à n'être utilisé que par le personnel de l'hôtel.
 
 ## Etapes
 
-En cours...
+- Diagramme de classe et d'activitée
+- Maquette
+- Développement des interfaces et leur liaisons
+- Développement des données
+- Implémentation
+- Tests
+- Présentation
 
 ## Description
 
-En cours...
+Nous ne devions faire su'une partie de l'application. Nous avions à développer les programmes permettant de:
+- Afficher le mail de confirmation
+- Afficher le récapitulatif d'une réservation
+- Rechercher et modifier une réservation
+- Annuler une réservation
 
 ## Information suplémentaires et prise de recul
 
 Ce projet était en colaboration avec [Benjamin Conseil](https://github.com/conseil-benjamin), [Ethan Mancelon](https://github.com/EthanMancelon), [Pierrig Malnoë](https://github.com/VenomSE30). 
 
-En cours...
+Ce projets est la suite de celui de la SAE205.
