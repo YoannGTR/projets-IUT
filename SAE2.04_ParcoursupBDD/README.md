@@ -13,7 +13,9 @@ Création d'une base de données pour Parcoursup.
 
 ## Etapes
 
-En cours...
+- Création de la base de données
+- Remplissage de la base de donnée
+- Étude statistique sur la base de donnée
 
 ## Description
 
@@ -21,6 +23,6 @@ En cours...
 
 ## Information suplémentaires et prise de recul
 
-Ce projet était en colaboration avec [Benjamin Conseil](https://github.com/conseil-benjamin). 
+Ce projet est en colaboration avec [Benjamin Conseil](https://github.com/conseil-benjamin). 
 
 En cours...
