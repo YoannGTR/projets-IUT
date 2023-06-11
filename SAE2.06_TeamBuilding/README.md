@@ -1,4 +1,4 @@
-# création d'un évenement de team building
+# Création d'un évenement de team building
 
 ## Resumé
 
@@ -13,7 +13,9 @@ Création d'un évenement de team buiding pour la société Océanopolis, avec s
 
 ## Etapes
 
-En cours...
+- Création d'un dossier détaillé sur l'entreprise et sur l'évenement de team building proposé
+- Création d'un flyers
+- Création d'un film évenementiel et présentation devant un CSE fictif
 
 ## Description
 
