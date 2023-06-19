@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -25,6 +26,7 @@ public class FenRecapeRes extends Stage {
 		this.setScene(laScene);
 		this.sizeToScene();
 		this.setResizable(false);
+		this.getIcons().add(new Image("file:images/chv.png"));
 	}
 	
 	
@@ -36,7 +38,7 @@ public class FenRecapeRes extends Stage {
 	private TableView<Chambre> tableView = new TableView<>();
 	
 	private Label title = new Label();
-	private Label fieldNumRes = new Label();
+	private TextField fieldNumRes = new TextField();
 	
 	
 	public BorderPane creerContenu()
@@ -53,9 +55,11 @@ public class FenRecapeRes extends Stage {
         title.setStyle("-fx-font-size: 20; -fx-text-fill: white; -fx-padding: 10;");
         
        
-        fieldNumRes.setText("458419565195848");
+        fieldNumRes.setText("00112233");
+        fieldNumRes.setEditable(false);
+        fieldNumRes.setMaxWidth(120);
         fieldNumRes.setStyle("-fx-background-color: #D9D9D9; -fx-text-fill: black; -fx-font-size: 15; -fx-padding: 6 20;");
-		
+        fieldNumRes.setFocusTraversable(false);
         
 		header.getChildren().addAll(title, fieldNumRes);
         header.setAlignment(Pos.CENTER_LEFT);
@@ -112,7 +116,7 @@ public class FenRecapeRes extends Stage {
         name.setEditable(false);
         name.setStyle("-fx-background-color: #D9D9D9;-fx-font-size:14px;");
         name.setFocusTraversable(false);
-        name.setPrefWidth(100);
+        name.setPrefWidth(150);
         
         nameTextField.setAlignment(Pos.CENTER);
         nameTextField.getChildren().add(name);
@@ -184,7 +188,7 @@ public class FenRecapeRes extends Stage {
         endDatePicker.setPadding(new Insets(3));
         
         
-        reservationDateLabel.setText("Date de réservation :");
+        reservationDateLabel.setText("Date de création de la réservation :");
         dateRes.setText("01-06-2023");
         reservationDateLabel.setTextFill(Color.BLACK);
         dateRes.setEditable(false);
@@ -214,7 +218,7 @@ public class FenRecapeRes extends Stage {
         return formGridPane;
 	}
 	private TableColumn<Chambre, String> categorieCol = new TableColumn<>();
-	private TableColumn<Chambre, Integer> numeroCol = new TableColumn<>();
+	private TableColumn<Chambre, String> numeroCol = new TableColumn<>();
 	private TableColumn<Chambre, Integer> personnesCol = new TableColumn<>();
 	
 	
@@ -229,7 +233,7 @@ public class FenRecapeRes extends Stage {
         
         categorieCol.setCellValueFactory(new PropertyValueFactory<>("categorie"));
         numeroCol.setCellValueFactory(new PropertyValueFactory<>("numero"));
-        personnesCol.setCellValueFactory(new PropertyValueFactory<>("personnes"));
+        personnesCol.setCellValueFactory(new PropertyValueFactory<>("nbPersonnes"));
 
         // Définir les largeurs des colonnes
         categorieCol.setPrefWidth(100);
@@ -237,41 +241,96 @@ public class FenRecapeRes extends Stage {
         personnesCol.setPrefWidth(100);
 
         // Classe de cellule personnalisée pour la couleur de fond
-        class CustomTableCell<T> extends TableCell<Chambre, T> {
-            @Override
-            protected void updateItem(T item, boolean empty) {
-                super.updateItem(item, empty);
+        categorieCol.setCellFactory(col -> new TableCell<Chambre, String>(){
+        	public void updateItem(String item, boolean empty) {
+	            super.updateItem(item, empty);
+	
+	            if (empty || item == null) {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(null);
+	             } 
+	             else {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(item.toString());
+	              }
+	          }
+        });
+        numeroCol.setCellFactory(col -> new TableCell<Chambre, String>(){
+        	public void updateItem(String item, boolean empty) {
+	            super.updateItem(item, empty);
+	
+	            if (empty || item == null) {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(null);
+	             } 
+	             else {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(item.toString());
+	              }
+	          }
+        });
+        personnesCol.setCellFactory(col -> new TableCell<Chambre, Integer>(){
+        	public void updateItem(Integer item, boolean empty) {
+	            super.updateItem(item, empty);
+	
+	            if (empty || item == null) {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(null);
+	             } 
+	             else {
+	                  int index = getIndex();
+	                  if (index % 2 == 0) {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
+	                  } else {
+	                      setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
+	                  }
+	                  setText(item.toString());
+	              }
+	          }
+        });
 
-                if (empty || item == null) {
-                    int index = getIndex();
-                    if (index % 2 == 0) {
-                        setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
-                    } else {
-                        setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
-                    }
-                    setText(null);
-                } else {
-                    int index = getIndex();
-                    if (index % 2 == 0) {
-                        setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.4), null, null)));
-                    } else {
-                        setBackground(new Background(new BackgroundFill(Color.web("#4070EC", 0.6), null, null)));
-                    }
-                    setText(item.toString());
-                }
-            }
-        }
-
-        // Appliquer la classe de cellule personnalisï¿½e ï¿½ chaque colonne
-        categorieCol.setCellFactory(col -> new CustomTableCell<>());
-        numeroCol.setCellFactory(col -> new CustomTableCell<>());
-        personnesCol.setCellFactory(col -> new CustomTableCell<>());
 
         tableView.getColumns().addAll(categorieCol, numeroCol, personnesCol);
-        tableView.getItems().add(new Chambre("Standard", 101, 2));
-        tableView.getItems().add(new Chambre("Deluxe", 202, 4));
-        tableView.getItems().add(new Chambre("Suite", 301, 3));
+        
+        
 
         return tableView;
+	}
+	public void init(Reservation res)
+	{
+		Client client = AccesDonees.getClient(res.getNumClientRes());
+		fieldNumRes.setText(res.getNum_res());
+		name.setText(client.getPrenomClient()+" "+client.getNomClient());
+		number.setText(res.getNumClientRes());
+		city.setText(client.getVille());
+		dateRes.setText(res.getDate_creation_toString());
+		dateStart.setText(res.getDate_deb_sejour_toString());
+		dateEnd.setText(res.getDate_fin_sejour_toString());
+		tableView.getItems().addAll(res.getChambre_res());
 	}
 }

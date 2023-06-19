@@ -11,6 +11,7 @@ public class Client
     private String mailClient;
     private String adresse;
     private String ville;
+    private String codePostal;
     private ArrayList<Reservation> listeReservations = new ArrayList<>();
 
     public Client()
@@ -18,13 +19,14 @@ public class Client
         numClient = "0123456";
     }
     
-    public Client(String prenomClient, String nomClient, String numeroTelClient, String mailClient, String adresse, String ville) {
+    public Client(String prenomClient, String nomClient, String numeroTelClient, String mailClient, String adresse, String ville, String codePostal) {
         this.nomClient = nomClient;
         this.prenomClient = prenomClient;
         this.numeroTelClient = numeroTelClient;
         this.mailClient = mailClient;
         this.adresse = adresse;
         this.ville = ville;
+        this.codePostal = codePostal;
 
         String tmp = String.format("%08d", AccesDonees.getLesClient().size());
         int i = 0;
@@ -50,6 +52,13 @@ public class Client
 
     public void setVille(String ville) {
         this.ville = ville;
+    }
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
     }
 
     public String getNumClient() {

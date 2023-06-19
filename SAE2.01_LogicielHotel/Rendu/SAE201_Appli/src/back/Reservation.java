@@ -9,10 +9,10 @@ import java.text.SimpleDateFormat;
 public class Reservation {
 
     private static Calendar date = Calendar.getInstance();
-    private static final String PATTERN_FORMAT = "dd.MM.yyyy";
+    private static final String PATTERN_FORMAT = "dd/MM/yyyy";
     private static SimpleDateFormat formatter = new SimpleDateFormat(PATTERN_FORMAT);
 
-    private Calendar date_creation;
+    private Calendar date_creation; 
     private Calendar date_deb_sejour;
     private Calendar date_fin_sejour;
     private int nb_nuits;
@@ -44,9 +44,9 @@ public class Reservation {
         client.addRes(this);
 
         this.date_deb_sejour.roll(Calendar.MONTH, false);
-        this.date_creation = Calendar.getInstance();
         this.date_fin_sejour =(Calendar) date_deb_sejour.clone();
         this.date_fin_sejour.add(Calendar.DAY_OF_YEAR, this.nb_nuits);
+        this.date_creation = Calendar.getInstance();
     }
 
 
@@ -62,13 +62,13 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation [\n chambre_res=" + chambre_res + ",\n date_creation=" + formatter.format(date_creation.getTime()) + ",\n date_deb_sejour="
-                + formatter.format(date_deb_sejour.getTime()) + ",\n date_fin_sejour=" + formatter.format(date_fin_sejour.getTime()) + ",\n nb_nuits=" + nb_nuits + ", \n numClient="
+                + formatter.format(date_deb_sejour.getTime()) + ",\n date_fin_sejour=" + getDate_fin_sejour_toString() + ",\n nb_nuits=" + nb_nuits + ", \n numClient="
                 + numClient + ",\n num_res=" + num_res + "\n]";
                 
     }
     
     public static void main(String[] args) {
-        date.set(2022, 6, 15);
+        date.set(2021, 1, 15);
 		Reservation res = new Reservation(
             date,
             4,
