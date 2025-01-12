@@ -1,5 +1,7 @@
 # RSE de Heineken
 
+Compétence 6 : Collaborer
+
 ## Resumé
 
 Etude de la RSE de heineken et tableau des caractéristiques de l'entreprise.

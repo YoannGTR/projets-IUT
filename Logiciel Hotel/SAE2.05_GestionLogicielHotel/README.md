@@ -1,5 +1,7 @@
 # Gestion d'un projet de création de logiciel
 
+Compétence 5 : Conduire
+
 ## Resumé
 
 Gestion du projet de création d'un logiciel de gestion d'hotel.

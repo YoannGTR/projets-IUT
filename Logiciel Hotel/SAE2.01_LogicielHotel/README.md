@@ -1,5 +1,7 @@
 # Logiciel de gestion d'un hotel
 
+Compétence 1 : Réaliser
+
 ## Resumé
 
 Création d'un logiciel de gestion d'un hotel, avec son interface en JavaFX.  

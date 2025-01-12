@@ -1,4 +1,6 @@
-# SportKOH
+# Tour du cavalier
+
+Compétence 2 : optimiser
 
 ## Resumé
 

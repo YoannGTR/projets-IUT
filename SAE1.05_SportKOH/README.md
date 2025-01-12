@@ -1,5 +1,7 @@
 # SportKOH
 
+Compétence 5 : Conduire
+
 ## Resumé
 
 Création d'un site vitrine pour l'entreprise fictive Sport KOH.

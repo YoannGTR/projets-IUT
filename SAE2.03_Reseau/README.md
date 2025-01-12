@@ -1,5 +1,7 @@
 # Installation d'un service réseau 
 
+Compétence 3 : réaliser
+
 ## Resumé
 
 Installation et configuration des services nécessaires au développement d'un site web grâce à un serveur apache

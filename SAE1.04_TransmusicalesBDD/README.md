@@ -1,5 +1,7 @@
 # Transmusicales BDD
 
+Compétence 4 : administrer
+
 ## Resumé
 
 Elaboration d'une base de donnée pour les transmusicales. 

@@ -1,5 +1,7 @@
 # Parcoursup BDD
 
+Compétence 4 : administrer
+
 ## Resumé
 
 Création d'une base de données pour Parcoursup. 

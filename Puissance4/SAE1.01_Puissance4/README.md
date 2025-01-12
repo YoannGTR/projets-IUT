@@ -1,5 +1,7 @@
 # Puissance4
 
+Compétence 1 : Réaliser
+
 ## Resumé
 
 Création d'un Puissance 4 executable et jouable dans un terminal.  

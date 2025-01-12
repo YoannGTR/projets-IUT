@@ -1,5 +1,7 @@
 # BotPuissance4
 
+Compétence 2 : Optimiser
+
 ## Resumé
 
 Création d'un adversaire virtuel pour jeu de puissance 4, capable d'anticiper des coups adverses et de jouer de la manière la plus efficace possible.  
