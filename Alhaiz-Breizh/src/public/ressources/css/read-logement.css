@@ -1,0 +1,114 @@
+:root {
+    --background-color: #fff;
+    --blue: #738da9;
+    --blue-hover: #4b5596;
+    --gray: #a09e9e;
+    --lightgray: #f6f6f6;
+    --darkgray: #333;
+  
+    --nuit: 1.5rem;
+    --h1: 2rem;
+    --h2: 1.75rem;
+    --h3: 1.5rem;
+    --h4: 1.25rem;
+    --p: 1rem;
+    --button: 1.063rem;
+  
+    --Mnuit: 1.25rem;
+    --Mh1: 1.5rem;
+    --Mh2: 1.25rem;
+    --Mh3: 1.125rem;
+    --Mp: 1rem;
+    --MpInput: 0.8rem;
+    --Mbutton: 0.875rem;
+  
+    --prix1: 2.5rem;
+    --prix2: 3.75rem;
+  
+    --borderRadius: 0.75rem;
+    --borderRadiusInput: 0.25rem;
+  
+    --PadMainTel: 1rem;
+    --PadGapTel: 1.5rem;
+    --PadMainTablet: 1.5rem;
+    --PadGapTablet: 1.5rem;
+    --PadMainLaptop: 2rem;
+    --PadGapLaptop: 2rem;
+    --PadMainDesktop: 3rem;
+    --PadGapDesktop: 2rem;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'),
+      url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('TrueType');
+  }
+  
+  @font-face {
+    font-family: 'QuickSand';
+    src: local('QuickSand'),
+      url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('TrueType');
+  }
+  
+  main input[type='text'],
+  main .inputNumber,
+  main input[type='time'],
+  main textarea {
+    color: black;
+    border: none;
+  }
+  main select {
+    cursor: default;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    background-color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: var(--MpInput);
+    color: black;
+  }
+  
+  #previewImageContainer {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  input[type='checkbox'].CBAmenagement + label,
+  input[type='checkbox'].CBActivite + label {
+    color: white;
+    border: 2px solid var(--darkgray);
+    background-color: var(--darkgray);
+    cursor: default;
+  }
+  input[type='checkbox'].CBAmenagement:hover + label,
+  input[type='checkbox'].CBActivite:hover + label {
+    background-color: var(--darkgray);
+  }
+  .checkboxGroup2 .perimeterActivite {
+    display: block;
+  }
+  .hors-ligne > input[type='checkbox']:disabled {
+    background-color: var(--darkgray);
+  }
+  #OFFLINE {
+    background-color: #e74c3c;
+    border-radius: var(--borderRadiusInput);
+  }
+  #OFFLINE:hover {
+    background-color: #c0392b;
+  }
+  #ONLINE {
+    background-color: #2ecc71;
+    border-radius: var(--borderRadiusInput);
+  }
+  #ONLINE:hover {
+    background-color: #27ae60;
+  }
+  .part-form:last-child{
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+  
+  }

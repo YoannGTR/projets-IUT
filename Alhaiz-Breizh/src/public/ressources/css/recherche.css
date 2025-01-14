@@ -1,0 +1,796 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+:root {
+    --background-color: #fff;
+    --pink: #f57393;
+    --pink-hover: #ff3b7b;
+    --pink-hover-calendar: rgb(245, 115, 147, 0.5);
+    --gray: #a09e9e;
+  
+    --nuit: 1.5rem;
+    --h1: 2rem;
+    --h2: 1.75rem;
+    --h3: 1.5rem;
+    --h4: 1.25rem;
+    --p: 1rem;
+    --button: 1.063rem;
+  
+    --Mnuit: 1.25rem;
+    --Mh1: 1.5rem;
+    --Mh2: 1.25rem;
+    --Mh3: 1.125rem;
+    --Mp: 1rem;
+    --Mbutton: 0.875rem;
+  
+    --prix1: 2.5rem;
+    --prix2: 3.75rem;
+  
+    --borderRadius: 0.75rem;
+  
+    --PadMainTel: 1rem;
+    --PadGapTel: 1.5rem;
+    --PadMainTablet: 1.5rem;
+    --PadGapTablet: 1.5rem;
+    --PadMainLaptop: 2rem;
+    --PadGapLaptop: 2rem;
+    --PadMainDesktop: 3rem;
+    --PadGapDesktop: 2rem;
+  }
+  .hdpi .pac-icon{
+    display:none;
+  }
+  .pac-item span{
+    font-family:Quicksand;
+    font-size: var();
+  }
+  main label{
+    font-family: Quicksand;
+    font-size: var(--Mp);
+  }
+  main input{
+    font-family: Quicksand;
+    font-size: var(--Mp);
+  }
+  main select{
+    font-family: Quicksand;
+    font-size: var(--Mp); 
+  }
+  .all-card{
+    display:flex;
+    flex-flow:wrap;
+    align-items:center;
+    gap:0.25rem;
+    justify-content: space-around;
+  }
+
+  main label{
+    font-family: Quicksand;
+  }
+.down-mobile{
+    width: 1.1rem;
+    height: 1.1rem;
+}
+.down-desktop{
+  width:1.5rem;
+  height:1.5rem;
+  display:none;
+}
+.container{
+    display:flex;
+    flex-flow:column;
+    gap:var(--PadGapTel)
+}
+.container-filtre{
+    display:flex;
+    height:fit-content;
+    flex-flow:column;
+    align-items: center;
+    background-color: #ECEFF2 ;
+    border-radius: var(--borderRadius);
+    padding: var(--PadMainTel);
+    gap:var(--PadMainTel);
+}
+
+.container-card{
+  display:flex;
+  flex-flow:column;
+  align-items:center;
+  padding:var(--PadMainTel);
+  gap:var(--PadMainTel);
+}
+.container-prix{
+    display:flex;
+    flex-flow:column;
+    background-color: white ;
+    border-radius: var(--borderRadius);
+    width:100%;
+    
+}
+main h2{
+  font-family:Montserrat;
+  font-weight: bold;
+  font-size: var(--Mh2);
+}
+
+main h5{
+  font-family:Montserrat;
+  font-weight:bold;
+  font-size:var(--Mbutton);
+
+}
+.pac-container:after {
+  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+  background-image: none !important;
+  height: 0px;
+}
+.card-title h3 {
+  font-size: medium;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 165px;
+  max-width:165px;
+  color: black;
+}
+main h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight:bold;
+  font-size:var(--Mh3)
+}
+.pac-icon:after{
+  background-image:none !important;
+}
+.container-commune{
+    justify-content: center;
+    width:100%;
+    background-color: white ;
+    border-radius: var(--borderRadius);
+}
+.container-dates{
+  background-color: white ;
+  border-radius: var(--borderRadius);
+  width:100%;
+}
+.first-ligne{
+  display:flex;
+  flex-flow:row;
+  justify-content: space-between;
+  width:100%
+}
+.container-voyageurs{
+    width:100%;
+    background-color: white ;
+    border-radius: var(--borderRadius);
+}
+.container-departement{
+    justify-content: center;
+    width:100%;
+    background-color: white ;
+    border-radius: var(--borderRadius);
+}
+.close-filter{
+  background-color:#f57393;
+  color:white;
+  font-family:Montserrat;
+  font-size:var(--Mbutton);
+  padding: 0.75rem;
+  border-radius:0.75rem;
+  border-width:0;
+  width:100%;
+  font-weight:bold;
+}
+.container-underfiltre{
+    justify-content: center;
+    display:flex;
+    flex-flow:row;
+    background-color: white ;
+    border-radius: var(--borderRadius);
+    padding: var(--PadMainTel);
+    align-items: center;
+}
+.input-prix{
+    display:flex;
+    flex-flow:row;
+    padding: 0.75rem;
+    font-family:Quicksand;
+    justify-content: space-around;
+}
+.ligne{
+    padding: 0.75rem;
+    display:flex;
+    flex-flow:row;
+    justify-content: space-between;
+
+}
+.colonne{
+    display:flex;
+    flex-flow:column;
+    gap:0.5rem;
+}
+.price{
+    width:80%;
+}
+  
+  /* Buttons in the calendar */
+  .button-container-calendar {
+    width: 100%;
+  }
+  .button-container-calendar button {
+    background: var(--pink);
+    color: #fff;
+    border: 1px solid var(--pink);
+    border-radius: 0.75rem;
+    padding: 5px 10px;
+    margin: 0 0.125rem;
+    cursor: pointer;
+  }
+  .button-container-calendar #previous{
+    cursor: default;
+    background-color: var(--background-color);
+    color: var(--pink);
+    font-weight: bold;
+  }
+  /* Calendar table */
+  .table-calendar {
+    border-collapse: separate;
+    border-spacing: 0.125rem;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    table-layout: auto;
+  }
+  
+  .table-calendar td,
+  .table-calendar th {
+    /* width: 14%; */
+    padding: 0.25rem 0.25rem;
+    text-align: center;
+    border-radius: 0.75rem;
+    /* background-color: var(--pink); */
+  }
+  .card {
+    width: 180px;
+    max-width:180px; /* Ajustez la largeur selon vos besoins */
+    min-height: 240px;
+    background-color: white; 
+    border-radius: 12px;
+    flex: 1; /* Prend une largeur égale dans le conteneur Flexbox */
+    flex-direction: column; /* Arrange le contenu verticalement */
+    vertical-align: top;
+    display: inline-block;
+    box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+    }
+    .card a {
+      color: #333; 
+      text-decoration: none;
+    }
+    .card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px 12px 0px 0px;
+      object-position: center;
+    }
+  
+    .nav-button{
+      display: none;
+    }
+  
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 140px;
+  
+  }
+  .card-title {
+    overflow:visible; /* Hide overflow */
+  }
+  
+  .card-title h3{
+    font-size: medium;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width:165px;
+    color: black;
+  }
+  
+  .card-excerpt p{
+    font-size: small;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: wrap;
+  }
+  
+  .card-excerpt::first-letter, .card-title::first-letter{
+    text-transform: uppercase;
+  }
+  .card-avis-icon img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+  
+  .card-avis-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.3em;
+  }
+  .card-body p{
+    font-family: "Quicksand";
+  }
+  
+  .card-excerpt p{
+    font-size: 14px;
+  }
+  
+  .card-body p strong, .card-excerpt p,
+  .card-avis-icon{
+    color: #555555;
+  }
+  
+  .card-body p strong{
+    color: #F57393;
+  }
+  .card-body .last-line {
+    display: flex; /* Mettre les éléments en mode flexbox */
+    align-items: center; /* Aligner verticalement au centre */
+    justify-content: space-between;
+  }
+  #space{
+    width:100%;
+    justify-content: space-between;
+  }
+
+  
+  .card-body {
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .card-excerpt{
+    margin-top: -3px;
+    margin-bottom: 10px;
+  }
+  
+  .card-body .card-avis:first-child {
+    margin-top: 0; /* Supprimer la marge du premier élément */
+  }
+  .titre_logement{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 2.5rem;
+  }
+  main input{
+    cursor: pointer;
+    background: #ffffff;
+    color: #585858;
+    border: 1px solid #bfc5c5;
+    border-radius: 12px;
+    padding: 5px 1em;
+    font-family: Quicksand;
+  }
+  .footer-container-calendar select {
+    cursor: pointer;
+    background: #ffffff;
+    color: #585858;
+    border: 1px solid #bfc5c5;
+    border-radius: 12px;
+    padding: 5px 1em;
+  }
+  .select-departement{
+    cursor: pointer;
+    background: #ffffff;
+    color: #585858;
+    border: 1px solid #bfc5c5;
+    border-radius: 12px;
+    padding: 5px 1em;
+
+  }
+  .select-filtre{
+    cursor: pointer;
+    background: #ffffff;
+    color: #585858;
+    border: 1px solid #bfc5c5;
+    border-radius: 12px;
+    padding: 5px 1em;
+    align-self: right;
+  }
+  #quantity {
+    appearance: textfield;
+  }
+  #quantity {
+    height: 2rem;
+    width: 4rem;
+    text-align: center;
+    font-size: 1.25rem;
+    border: 1px solid #000;
+    border-radius: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+  }
+  #minus,
+#plus {
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--pink);
+  font-weight: bold;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+#minus svg,
+#plus svg {
+  width: 1rem;
+  height: 1rem;
+}
+#minus {
+  background-color: var(--background-color);
+  cursor: auto;
+  color: var(--pink);
+}
+#plus {
+  background-color: var(--pink);
+  color: white;
+}
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--Mp);
+    margin: 0.5rem 0 0 0;
+  }
+  @media screen and (min-width: 350px) {
+    .table-calendar {
+      table-layout: fixed;
+    }
+    .table-calendar td,
+    .table-calendar th {
+      padding: 0.5rem 0.25rem;
+    }
+  
+  .table-calendar td span,
+  .table-calendar th span {
+    width: fit-content;
+    font-size: var(--Mp);
+  }
+  
+  /* Date picker */
+  .date-picker{
+    border: 1px solid transparent;
+  }
+  .date-picker.today {
+    font-weight: bold;
+    outline: 1px dashed #00bcd4;
+  }
+  
+  .date-picker.today span {
+    border-bottom: 2px solid currentColor;
+  }
+  
+  
+  /* Hover effect for date cells */
+  .date-picker:hover {
+    background-color: var(--pink-hover-calendar);
+    color: white;
+    cursor: pointer;
+  }
+  /* Hover effect for date cells */
+  .selected {
+    background-color: var(--pink);
+    color: white;
+  }
+  .end{
+    background-color: var(--pink-hover);
+  }
+  /* Hover effect for date cells */
+  .selectedIn {
+    background-color: var(--background-color);
+    border: 1px solid var(--pink);
+    color: var(--pink);
+  }
+  
+  .date-before{
+    color: var(--gray);
+    cursor: default;
+    border: 1px solid transparent;
+  
+  }
+  
+  /* Header for month and year */
+  #monthAndYear {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  /* Navigation buttons */
+  .button-container-calendar {
+    position: relative;
+    margin-bottom: 1em;
+    overflow: hidden;
+    clear: both;
+  }
+  
+  #previous {
+    float: left;
+  }
+  
+  #next {
+    float: right;
+  }
+  
+  /* Footer styling */
+  .footer-container-calendar {
+    margin-top: 1em;
+    border-top: 1px solid #dadada;
+    padding: 10px 0;
+  }
+  .select-departement{
+    border-top: 1px solid #dadada;
+  }
+  .select-filtre{
+    border-top: 1px solid #dadada;
+  }
+  .footer-container-calendar #year{
+    margin-left: 3.85rem;
+    margin-right: 3.85rem;
+  }
+  
+
+
+  }
+
+
+@media (min-width: 481px) {
+    .container-calendar {
+        margin: var(--PadGapTablet) 0;
+        width: 25rem;
+        max-width: 100%;
+      }
+      .all-card{
+        gap:0.5rem;
+      }
+      .button-container-calendar button {
+        margin: 0 0.25rem;
+      }
+      /* Calendar table */
+      .table-calendar {
+        width: 100%;
+        border-spacing: 0.25rem;
+      }
+      .table-calendar td,
+      .table-calendar th {
+        padding: 0.75rem 0.5rem;
+      }
+    
+      .footer-container-calendar #year{
+        margin-left: 0;
+        margin-right: 0;
+      }
+      main h2{
+        font-size: var(--Mh2);
+      }
+      
+      main h5{
+        font-size:var(--Mbutton);
+      
+      }
+      main h3 {
+        font-size:var(--Mh3)
+      }
+}
+@media (min-width: 685px) {
+    .card {
+        width: 180px;
+        min-height: 255px;
+        height: auto;
+        background-color: #FFFFFF; 
+        margin-top: 1em;
+        border-radius: 12px;
+      }
+}
+@media (min-width: 769px) {
+  .colonne{
+    gap:0.75rem;
+  }
+  .all-card{
+    gap:1rem;
+  }
+  .container-underfiltre{
+    padding: var(--PadMainTablet)
+}
+.input-prix{
+    padding: 0.9rem;
+}
+.ligne{
+    padding: 0.9rem;
+    display:flex;
+    flex-flow:row;
+    justify-content: space-between;
+
+}
+  .container-filtre{
+    padding: var(--PadMainTablet);
+    gap:var(--PadMainTablet);
+}
+
+.container-card{
+  padding:var(--PadMainTablet);
+  gap:var(--PadMainTablet);
+}
+  main{
+    padding:2.5rem;
+  }
+  main h2{
+    font-size: var(--h2);
+  }
+  
+  main h5{
+    font-size:var(--button);
+  
+  }
+  main h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight:bold;
+    font-size:var(--h3)
+  }
+  .close-filter{
+    background-color:#f57393;
+    color:white;
+    font-family:Montserrat;
+    font-size:var(--button);
+    padding: 0.75rem;
+    border-radius:0.75rem;
+    border-width:0;
+    width:100%;
+    font-weight:bold;
+  }
+  main label{
+    font-size: var(--p);
+  }
+  main input{
+    font-size: var(--p)
+  }
+  main select{
+    font-size: var(--p)
+  }
+
+}
+@media (min-width: 1024px) {
+  .first-ligne{
+    justify-content: space-around;
+  }
+  .container{
+    flex-flow:row;
+  }
+  .down-mobile{
+    display:none;
+  }
+  .down-desktop{
+    display:block;
+  }
+  .close-filter{
+    display:none;
+  }
+  .container-filtre{
+    width:40%;
+    padding: var(--PadMainTablet);
+    gap:var(--PadMainTablet);
+  }
+
+  .container-card{
+    width:60%;
+    padding:var(--PadMainLaptop);
+    padding-right:0;
+    gap:var(--PadMainLaptop);
+  }
+  .container-underfiltre{
+    padding: var(--PadMainTablet)
+}
+.input-prix{
+    padding: 0.9rem;
+}
+.ligne{
+    padding: 0.9rem;
+    display:flex;
+    flex-flow:row;
+    justify-content: space-between;
+
+}
+
+
+  main{
+    padding:3rem;
+  }
+    .container-calendar {
+        /* padding: 0; */
+        margin: 0;
+        padding: calc(var(--PadGapDesktop)) 0;
+        width: fit-content;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        padding:0;
+    
+      }
+      .button-container-calendar {
+        margin-bottom: 0.75rem;
+      }
+      /* Calendar table */
+      .table-calendar {
+        border-spacing: 0.125rem;
+        max-width: 100%;
+        border: 0;
+      }
+      .table-calendar td,
+      .table-calendar th {
+        padding: 0.4rem 0;
+        /* border: 1px solid black; */
+      }
+      #reservation form, #reservation form #btnReserver {
+        width: 100%;
+      }
+      .footer-container-calendar #year{
+        margin-left: 3.85rem;
+      }
+      .footer-container-calendar{
+        border-top: none;
+        margin-top: 0.75rem;
+        padding: 0;
+      }
+      .select-departement{
+        border-top: none;
+        padding: 0;
+      }
+      .select-filtre{
+        border-top: none;
+        padding: 0;
+      }
+      .card {
+        width: 250px; 
+        max-width:250px;
+        min-width: 250px;
+        margin:auto;  
+        box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+      }
+      .card-title h3{
+        width:245px;
+      }
+      .card-image{
+        height: 250px;
+      }
+    
+      .titre_logement{
+        font-size: 32px;
+      }
+    
+      .card-excerpt p{
+        white-space: nowrap;
+      }
+      .number {
+        margin: 0.5rem 0 0 0;
+      }
+}
+@media (min-width: 1149px) {
+  .container-filtre{
+    width:25%;
+    padding: var(--PadMainLaptop);
+    gap:var(--PadMainDesktop);
+  }
+
+  .container-card{
+    width:75%;
+    padding:var(--PadMainLaptop);
+    padding-right:0;
+    gap:var(--PadMainDesktop);
+  }
+  .container-underfiltre{
+    padding: var(--PadMainLaptop)
+}
+.input-prix{
+    padding: 1.2rem;
+}
+}

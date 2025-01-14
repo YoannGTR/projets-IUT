@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.image{
+    width: 100%;
+    border-radius: 0.75rem;
+    order:-3;
+    height:13.75rem;
+    object-fit:cover;
+}
+
+body main>section{
+    padding:0.8rem;
+    width: 100%;
+    align-items:center;
+    gap:0.8rem;
+    border-radius: 0.75rem;
+    margin-bottom:0.8rem;
+
+}
+.detailcomp>div{
+    width:100%;
+    border-radius:0.75rem;
+}
+.laptop {
+    display: none;
+}
+.detailcomp{
+    padding:0;
+    display:flex;
+    flex-flow:column;
+    width:100%;
+}
+body main h2{
+    font-family:Montserrat;
+    font-size: 1.4rem;
+}
+body main h3{
+    font-family:Montserrat;
+    font-weight:normal;
+    font-size: 1.2rem;
+}
+body main h4{
+    font-family:Montserrat;
+    font-weight:normal;
+    font-size: 1rem;
+}
+body main p{
+    font-family:Quicksand;
+    font-size: 1rem;
+}
+.arrive{
+    display:flex;
+    flex-flow:wrap;
+    padding:0;
+}
+.flexitem {
+    flex-basis: calc(50% - 0.9rem);
+    margin-bottom: 0.9rem; 
+}
+.titre{
+    text-align:center;
+    background-color: rgba(242, 242, 242, 1);;
+    order:-2;
+    padding:0.8rem;
+}
+
+.contenu{
+    border-spacing: 0 0.4rem;
+    width:100%;
+    padding-left:0.5rem;
+}
+.contenu th{    
+    width:max-content;
+    text-align:left;
+    font-size:1.1rem;
+    font-family:Montserrat;
+    font-weight:normal;
+    white-space:nowrap;
+}
+.contenu td{
+    text-align:right;   
+    font-size:1rem;
+    font-family:Quicksand;
+}
+.paiement,
+.methodepai,
+.detailpai{
+    display:flex;
+    flex-flow:column;
+    width:100%;
+    background-color: rgba(242, 242, 242, 1);
+    gap:0.8rem;
+}
+.paiement{
+    padding:0.8em;
+    gap:0.8rem;
+}
+.detail{
+    padding:0.8rem;
+    background-color: rgba(242, 242, 242, 1);
+    gap:0.4rem;
+
+}
+.detail>p {
+    padding-left:1rem;
+    width:50%;
+}
+
+
+.texte{
+    display:flex;
+    flex-flow:column;
+    gap:0.4rem;
+    padding:0;
+    padding-left:0.5rem;
+}
+.ligne{
+    display:flex;
+    flex-flow:row;
+    padding:0;
+    justify-content:space-between;
+}
+.description{
+    text-align:left;
+}
+.numerique{
+    text-align:right;
+}
+
+
+
+
+.rose{
+order:-1;
+width:100%;
+background-color: #738DA9;
+color:rgba(242, 242, 242, 1);
+}
+.gris{
+    background-color:#9D9D9D;
+    color: rgba(242, 242, 242, 1);
+    display: none;
+}
+.telecharger{
+    display:none;
+}
+body main button{
+    padding: 0.8rem;
+    border-width:0;
+    border-radius: 0.75rem;
+    font-size:0.9rem;
+    font-weight: bold;
+    font-family:Montserrat;
+    
+}
+body main button:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media (min-width: 481px) {
+    .image{
+        height:15.625rem;
+    }
+    body main>section{
+        margin-bottom:1.1rem;
+    }
+    body main h2{
+        font-size:1.5rem;
+    }
+    body main h3{
+        font-size:1.3rem;
+    }
+    body main h4{
+        font-size:1.1rem;
+    }
+    body main p{
+        font-size:1.1rem;
+    }
+    body main button{
+        font-size:1rem;
+        padding:1.1rem;
+    }
+    body main section{
+        padding:1.1rem;
+        gap:1.1rem;
+    }
+    .titre{
+        padding:1.1rem;
+    }
+    .paiement{
+        padding:1.1rem;
+        gap: 1rem;
+    }
+    .detail{
+        padding:1.1rem;
+        gap:0.6rem;
+    }
+    .detail>p{
+        padding-left:1.3rem;
+    }
+    .texte{
+        padding-left:0.8rem;
+        gap:0.8rem; 
+    }
+
+    .contenu{
+        border-spacing: 0 0.5rem;
+        padding-left:0.8rem;
+    }
+    .paiement,
+.methodepai,
+.detailpai{
+gap:1.1rem;
+}
+
+  }
+  
+  /* Laptops */
+  @media (min-width: 769px) {
+    .image{
+        height:15rem;
+        width:100%;
+    }
+    body main{
+        padding: 3rem;
+        gap:3.75rem;
+        display:flex;
+        flex-flow:column;
+    }
+    body main>div{
+        display:flex;
+        flex-flow:column;
+    }
+    body main h1{
+        font-size:1.8rem;
+        font-family:Montserrat;
+    }
+    body main h2{
+        font-size:1.6rem
+    }
+    body main h3{
+        font-size:1.4rem;
+        font-weight:bold;
+    }
+    body main h4{
+        font-size:1.2rem;
+        font-weight:bold;
+    }
+    body main p{
+        font-size:1rem;
+    }
+    .gros{
+        font-size:3rem;
+    }
+    .image{
+        order:0;
+    }
+    .laptop{
+        display:contents;
+    }
+    
+    .phone{
+        display:none;
+    }
+    .contenu th{
+        width:max-content;
+        white-space: nowrap;
+        font-size:1rem;
+        font-family:Quicksand;
+        font-weight:normal;
+    }
+    .contenu td{
+        font-size:1rem;
+        text-align:right;
+        width:100%;
+    }
+    .detailcomp{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        background-color:rgba(242, 242, 242, 1);
+        padding:2.2rem;
+        gap:2.2rem;
+    }
+    .detail{
+        padding:0;
+        width:100%;
+        align-self: start;
+    }
+    .titre{
+        display:none;
+    }
+    .rose{
+        order:0;
+        justify-self:end;
+        width:70%;
+        grid-column:2 / 2;
+    }
+    .paiement{
+        flex-flow:row;
+        padding:2.2rem;
+        gap:2.2rem;
+    }
+    .detailpai{
+        align-self:start;
+    }
+    .methodepai{
+        align-self:start;
+    }
+    .detail{
+        display:flex;
+        flex-flow:column;
+        gap:0.6rem;
+    }
+  }
+  
+  /* Desktops */
+  @media (min-width: 1025px) {
+    .image{
+        height:19rem;
+    }
+    .rose{
+        width:50%
+    }
+    .ligne{
+        width:65%;
+    }
+    .contenu tr{
+        margin-bottom:4rem;
+    }
+    .ecart{
+        margin-bottom:0
+    }
+}
+  
+  /* Extra large screens */
+  @media (min-width: 1201px) {
+  }

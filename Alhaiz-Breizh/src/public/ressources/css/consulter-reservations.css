@@ -1,0 +1,346 @@
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+    .rcard-prix, .rcard, .rcard-max, .contenu-tableau, .rcard-text, .rcard-corps, .bas-tableau,
+    .tri, .reservations-title, .onglets, .rcard-voyageurs, .rcard-lien {
+        display: flex;
+    }
+
+    .rcard-lien{
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+    }
+
+    .reservations-title{
+        font-family: "Montserrat", sans-serif;
+        margin: 1rem 0 0 0;
+        justify-content: center;
+    }
+
+    .onglets{
+        justify-content: center;
+        margin: 1em 0 1em 0;
+    }
+
+    .onglets button:hover{
+        border: 1px solid #000000;
+    }
+
+    .onglets button, .bouton-precedant button, .bouton-suivant button{
+        font-family: "Montserrat", sans-serif;
+        cursor: pointer;
+    }
+
+
+    .onglets button.active {
+        background-color: #738DA9; /* Couleur d'arrière-plan pour le bouton enfoncé */
+        color: white; /* Couleur du texte pour le bouton enfoncé */
+    }
+    
+
+    .onglets button{
+        padding: 5px;
+        border: 1px solid #acacac;
+        min-width: 64px;
+    }
+
+    .onglets button:nth-child(2){
+        border-radius: 0;
+    }
+
+    .onglets button:last-child{
+        border-radius: 0 8px 8px 0;
+    }
+
+    .onglets button:first-child{
+        border-radius: 8px 0 0 8px;
+    }
+
+
+    .entete-tableau img{
+        width: 16px;
+        height: 16px; 
+    }
+
+    .tableau-reservations{
+        background-color: #F6F6F6;
+        border-radius: 8px;
+        border: 1px solid #acacac;
+        margin: 0 auto;
+    }
+
+    .entete-tableau{
+        border-bottom: 1px solid #acacac;
+        height: 3em;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;
+        padding: 0 2em 0 2em;
+    }
+
+    .tri{
+        align-items: center;
+        border: 1px solid #acacac;
+        border-radius: 8px;
+        padding: 5px;
+        gap: 5px;
+        background-color: #F6F6F6;
+        font-family: "Montserrat", sans-serif;
+        height: 60%;
+        cursor: pointer;
+    }
+
+    .rcard-corps{
+        padding: 0.5em;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .rcard-prix{
+        align-items: center;
+        gap: 5px;
+    }
+
+    .rcard-text{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7px;
+    }
+
+    .rcard-prix, .rcard-titre{
+        flex-wrap: wrap;
+    }
+
+    .contenu-tableau{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .tableau-vide-terminée, .tableau-vide-en-cours,
+    .tableau-vide-à-venir{
+        padding: 1.5em;
+        font-family: "Quicksand", sans-serif;
+        font-weight: bold;
+    }
+
+    .rcard{
+        margin: 1em 1em 1em 1em;
+        height: 110px;
+        border-radius: 8px;
+        box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+        justify-content: flex-start;
+        background-color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .rcard:last-child{
+        margin: 1em 1em 1em 1em;
+    }
+
+    .rcard-image{
+        min-width: 90px;
+        min-height: auto;
+        max-width: 20%;
+        max-height: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    .rcard-image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .rcard-max{
+        align-items: flex-end;
+        gap: 5px;
+    }
+
+    .rcard-max img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .rcard p {
+        font-size: 0.7em;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .rcard-descr p:nth-child(2){
+        display: none;
+    }
+
+    .rcard h3 {
+        font-size: 1em;
+        font-family: "Montserrat", sans-serif;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal; /* Allow wrapping */
+    }
+
+    .bas-tableau{
+        padding: 1em 1em 0 1em ;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bas-tableau p{
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .bouton-precedant button, .bouton-suivant button{
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        padding: 0.8em 1.5em;
+        font-weight: bold;
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+
+    .bouton-precedant button{
+        background-color: #738DA9;
+
+    }
+
+    .bouton-suivant button{
+        background-color: #738DA9;
+    }
+
+    .rcard-prix span, .rcard-max p{
+        font-weight: bold;  
+    }
+
+    .nb-page{
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .rcard-voyageurs{
+        align-items: center;
+        gap: 18%;
+    }
+
+    /* Tablets */
+    @media (min-width: 481px) {
+
+        .rcard-descr p:nth-child(2){
+            display: flex;
+        }
+
+        .rcard{
+            height: auto;
+        }
+
+        .rcard-corps{
+            height: 120px;
+            padding: 1em;
+        }
+
+        .rcard-descr{
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5em;
+        }
+
+        .rcard p{
+            font-size: 14px;
+        }
+
+        .rcard-max img{
+            width: 25px;
+            height: 25px;
+        }
+
+        .entete-tableau{
+            padding: 0 3em 0 3em;
+        }
+    }
+
+    /* Laptops */
+    @media (min-width: 769px) {
+
+        .reservations-title{
+            justify-content: flex-start;
+        }
+
+        .onglets button{
+            padding: 8px 25px 8px 25px;
+            border: 1px solid #acacac;
+        }
+
+        .rcard-image{
+            min-width: 90px;
+            min-height: auto;
+            max-width: 190px;
+            max-height: 140px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .rcard-corps{
+            height: 140px;
+        }
+
+        .rcard-descr{
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5em;
+        }
+
+        .entete-tableau{
+            height: 4em;
+        }
+
+        .rcard-max img{
+            width: 28px;
+            height: 28px;
+        }
+        
+    }
+
+    @media (min-width: 1025px) {
+
+        .rcard-corps{
+            height: 160px;
+        }
+
+        .rcard-image{
+            width: 200px;
+            height: 140px;
+        }
+        
+        .main-page{
+            padding: 2em 2em 2em 2em;
+        }
+        
+        .rcard-corps{
+            height: 140px;
+        }
+
+        .entete-tableau{
+            padding: 0 1em 0 0;
+        }
+        
+    }
+
+    @media (min-width: 1201px) {
+
+        .rcard p {
+            font-size: 15px;
+        }
+    
+        .rcard h3 {
+            font-size: 1.2em;
+        }
+
+        .rcard {
+            overflow: hidden;
+            align-items: stretch;
+        }
+
+    }

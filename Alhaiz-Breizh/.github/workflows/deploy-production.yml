@@ -1,0 +1,31 @@
+name: Deploy on Production Conditions
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: SSH and Run Script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ vars.SSH_HOST }}
+          port: ${{ vars.SSH_PORT }}
+          username: ${{ vars.SSH_USERNAME }}
+          password: ${{ vars.SSH_PASSWORD }}
+          script: ${{ vars.SSH_COMMAND }}
+      
+      - name: send custom message with args
+        uses: appleboy/discord-action@master
+        with:
+          webhook_id: ${{ vars.WEBHOOK_ID }}
+          webhook_token: ${{ vars.WEBHOOK_TOKEN }}
+          message: "New version deployed on Production! 🚀\nGo check on https://bnbyte.ventsdouest.dev\n||<@&1239939998338383922>||"

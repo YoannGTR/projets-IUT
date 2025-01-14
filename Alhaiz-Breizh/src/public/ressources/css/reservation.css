@@ -1,0 +1,475 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #ECEFF2;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 0; /* Remove padding to make content closer to page edges */
+    background-color: white; /* Fond blanc pour le main */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    width: 100%; /* Ensure the content container takes the full width */
+    padding: 0; /* Remove padding to reduce space */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+/* bouton de filtre implémenter prochainement */
+.filtre-liste {
+    background-color: black;
+    font-family: Montserrat, sans-serif;
+    display: none;
+    width: 10em;
+    height: 150em;
+    margin-right: 20px;
+}
+
+.filtre-liste p {
+    color: white;
+}
+
+/* FIN de filtre */
+
+.reservation-container {
+    flex: 1;
+    max-width: 100%; /* Consistent max width */
+    width: 100%; /* Ensure it takes full width */
+    margin: 0 20px; /* Add margin to container */
+}
+
+.filtre-tri {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 2em 0 3em 2em;
+}
+
+.filtre-tri-left,
+.filtre-tri-right {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.filtre-tri-left {
+    align-self: flex-start;
+}
+
+.filtre-tri-right {
+    align-self: flex-end;
+}
+
+.filtre-tri svg {
+    width: 25px;
+    height: 25px;
+}
+
+.liste-reservation {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Max 3 cards per line */
+    gap: 20px; /* Gap between cards */
+    padding: 0; /* Remove padding for the container */
+    background-color: #ECEFF2; /* Fond gris clair pour liste des reservations */
+    border-radius: 15px;
+    max-width: 100%; /* Ensure it takes full width */
+    width: 100%; /* Ensure it takes full width of the parent container */
+    margin: 0; /* Remove margin */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+/* Add padding to the container for desktop view */
+@media (min-width: 1001px) {
+    .liste-reservation {
+        padding: 20px; /* Adjust the value as needed */
+        margin: 0 0 0 2em;
+    }
+}
+
+.card-reservation {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white; /* Fond blanc pour les cartes */
+    overflow: hidden;
+    height: 100%;
+    position: relative; /* Added for positioning the button */
+    max-width: 100%; /* Ensure it takes full width */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.card-reservation-img {
+    position: relative;
+    height: 8rem; /* Fixed height for image container */
+    overflow: hidden;
+}
+
+.card-reservation-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-reservation-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Ensure content container grows to take available space */
+}
+
+.card-reservation h4 {
+    margin: 0;
+    padding-bottom: 8px;
+    color: #333;
+    font-size: 1.2em;
+    line-height: 1.2; /* Ensure consistent line height */
+}
+
+.card-reservation p {
+    margin: 0; /* Remove margins for consistency */
+    padding-bottom: 16px;
+    color: #666;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.card-reservation p b,
+.card-reservation p i {
+    margin-right: 8px;
+}
+
+.card-reservation p svg {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.card-reservation p i:last-child {
+    margin-right: 0;
+}
+
+.card-reservation p b:last-child {
+    margin-right: 0;
+}
+
+/* définition des spécificités du bouton principal */
+.btn-principale {
+    background-color: #F57393; /* couleur de fond du bouton */
+    border: none; /* pas de bordure */
+    font-size: 1em; /* taille du texte */
+    border-radius: 5px; /* arrondissement des angles de 5px */
+    padding: 10px 20px; /* définition du padding */
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+/* définition des spécificités du texte du bouton principal */
+.btn-principale h5 {
+    margin: 0; /* Pas de marge */
+    font-size: 1em; /* taille de police à 1em */
+    color: white; /* couleur du texte */
+    font-family: 'Montserrat', Arial, sans-serif; 
+}
+
+/* définition des spécificités du bouton principal au survol */
+.btn-principale:hover {
+    border: solid 1px; /* bordure de 1 px */
+    border-color: #F57393; /* définition de la couleur de la bordure */
+    background-color: white; /* couleur de fond du bouton */
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.btn-principale:hover h5 {
+    margin: 0;
+    font-size: 1em;
+    color: #F57393;
+}
+
+.filtre-tri-right {
+    display: none;
+}
+
+.btn-principale-telephone {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filtre-liste {
+        display: none;
+    }
+
+    .liste-reservation {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ECEFF2; /* Fond gris clair pour liste des reservations */
+        gap: 10px;
+        max-width: 100%; /* Ensure it takes full width */
+    }
+
+    .card-reservation {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Montserrat', Arial, sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Modifié pour aligner les textes à la verticale */
+        height: 14rem; /* Augmenté pour plus de hauteur */
+        margin: 5px 0;
+        background-color: white; /* Fond blanc pour les cartes */
+        position: relative; /* Added for positioning the button */
+    }
+
+    .card-reservation-img {
+        height: 100%;
+        width: 40%;
+        order: 1;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .card-reservation-img img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-reservation-content {
+        width: 60%;
+        padding: 0.5rem 1rem; /* Ajusté pour réduire l'espace en haut */
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* S'assurer que le contenu commence en haut */
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .filtre-tri {
+        display: none;
+    }
+
+    .liste-reservation {
+        margin-top: 0px;
+        background-color: white;
+    }
+
+    .card-reservation h4 {
+        font-size: 1rem; /* Réduire la taille du titre */
+        word-wrap: break-word; /* Ajouté pour faire retourner à la ligne le titre s'il est trop long */
+        margin: 0; /* Retirer les marges */
+        padding: 0; /* Retirer le padding pour coller au haut */
+    }
+
+    .card-reservation u,
+    .card-reservation i {
+        white-space: nowrap; /* Ajouté pour empêcher les balises <u> et <i> de retourner à la ligne */
+    }
+
+    .card-reservation p {
+        font-size: 2.9vw; /* Réduire la taille du texte principal */
+    }
+
+    .btn-principale {
+        font-size: 2.9vw;
+        padding: 5px 10px; /* Adjusted padding */
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .btn-principale:hover {
+        font-size: 2.9vw;
+    }
+
+    .card-reservation-content p {
+        margin: 0.2rem 0; /* Reduced margin */
+        padding: 0; /* Removed padding */
+        font-size: 2.9vw;
+    }
+      
+    .card-reservation-content p svg {
+        vertical-align: middle;
+        margin-right: 0.5rem; /* Space between the icon and the text */
+    }
+      
+    .card-reservation-content .btn-principale {
+        margin-top: 0.5rem; /* Space between the last p and the button */
+    }
+}
+
+/* Style général pour tablettes */
+@media (min-width: 590px) and (max-width: 1000px) {
+    main {
+        padding: 1rem; /* Reduced padding for tablets */
+    }
+
+    .content-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .filtre-liste {
+        display: none;
+    }
+
+    .reservation-container {
+        flex: 1;
+        margin: 10px;
+        max-width: 1000px; /* Consistent max width */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .liste-reservation {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Ensure a maximum of 2 cards per line */
+        gap: 20px; /* Adjusted gap for tablets */
+        padding: 1rem; /* Padding for the container */
+        background-color: #ECEFF2; /* Fond gris clair pour liste des reservations */
+        border-radius: 15px;
+        max-width: 1000px; /* Consistent max width */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .card-reservation {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: white; /* Fond blanc pour les cartes */
+        overflow: hidden;
+        height: 100%;
+        max-width: 500px; /* Consistent max width for each card */
+        margin: 0 auto; /* Centre les cartes */
+        width: 100%; /* Ensure it takes full width */
+    }
+
+    .card-reservation-img {
+        position: relative;
+        height: 8rem; /* Fixed height for image container */
+        overflow: hidden;
+    }
+
+    .card-reservation-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-reservation-content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1; /* Ensure content container grows to take available space */
+    }
+
+    .card-reservation h4 {
+        margin: 0;
+        padding-bottom: 8px;
+        color: #333;
+        font-size: 1.2em;
+        line-height: 1.2; /* Ensure consistent line height */
+    }
+
+    .card-reservation p {
+        margin: 0; /* Remove margins for consistency */
+        padding-bottom: 16px;
+        color: #666;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .card-reservation p b,
+    .card-reservation p i {
+        margin-right: 8px;
+    }
+
+    .card-reservation p svg {
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    .card-reservation p i:last-child {
+        margin-right: 0;
+    }
+
+    .card-reservation p b:last-child {
+        margin-right: 0;
+    }
+
+    /* définition des spécificités du bouton principal */
+    .btn-principale {
+        background-color: #F57393; /* couleur de fond du bouton */
+        border: none; /* pas de bordure */
+        font-size: 1em; /* taille du texte */
+        border-radius: 5px; /* arrondissement des angles de 5px */
+        padding: 10px 20px; /* définition du padding */
+        cursor: pointer;
+        align-self: flex-end;
+        margin-top: auto; /* Push the button to the bottom */
+    }
+
+    /* définition des spécificités du texte du bouton principal */
+    .btn-principale h5 {
+        margin: 0; /* Pas de marge */
+        font-size: 1em; /* taille de police à 1em */
+        color: white; /* couleur du texte */
+        font-family: 'Montserrat', Arial, sans-serif; 
+    }
+
+    /* définition des spécificités du bouton principal au survol */
+    .btn-principale:hover {
+        border: solid 1px; /* bordure de 1 px */
+        border-color: #F57393; /* définition de la couleur de la bordure */
+        background-color: white; /* couleur de fond du bouton */
+        font-size: 1em;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    .btn-principale:hover h5 {
+        margin: 0;
+        font-size: 1em;
+        color: #F57393;
+    }
+}

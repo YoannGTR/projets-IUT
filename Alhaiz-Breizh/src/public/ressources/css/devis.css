@@ -1,0 +1,921 @@
+:root {
+  --background-color: #fff;
+  --pink: #f57393;
+  --pink-hover: #ff3b7b;
+  --pink-hover-calendar: rgb(245, 115, 147, 0.5);
+  --gray: #a09e9e;
+
+  --nuit: 1.5rem;
+  --h1: 2rem;
+  --h2: 1.75rem;
+  --h3: 1.5rem;
+  --h4: 1.25rem;
+  --p: 1rem;
+  --button: 1.063rem;
+
+  --Mnuit: 1.25rem;
+  --Mh1: 1.5rem;
+  --Mh2: 1.25rem;
+  --Mh3: 1.125rem;
+  --Mp: 1rem;
+  --Mbutton: 0.875rem;
+
+  --prix1: 2.5rem;
+  --prix2: 3.75rem;
+
+  --borderRadius: 0.75rem;
+
+  --PadMainTel: 1rem;
+  --PadGapTel: 1.5rem;
+  --PadMainTablet: 1.5rem;
+  --PadGapTablet: 1.5rem;
+  --PadMainLaptop: 2rem;
+  --PadGapLaptop: 2rem;
+  --PadMainDesktop: 3rem;
+  --PadGapDesktop: 2rem;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+    url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+  font-family: 'QuickSand';
+  src: local('QuickSand'),
+    url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('TrueType');
+}
+
+main {
+  background-color: #f0f0f0;
+  font-family: 'Montserrat', sans-serif;
+  padding: var(--PadMainTel);
+}
+main p {
+  text-align: justify;
+}
+.bloc {
+  width: 100%;
+  border-radius: var(--borderRadius);
+
+  margin-bottom: var(--PadGapTel);
+}
+#image_logement {
+  height: 13.75rem;
+  object-fit: cover;
+}
+
+
+
+#recapitulatif-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+#recapitulatif-table td{
+    padding: 0.5rem;
+}
+#recapitulatif-table .tabBorderBottom td{
+  padding-bottom: 1rem;
+}
+#recapitulatif-table .tabBorderTop td{
+  padding-top: 1rem;
+}
+
+.rose{
+  background-color: #F57393;
+  color:white;
+  padding: 0.8rem;
+  border-width:0;
+  border-radius: 0.75rem;
+  font-size:0.9rem;
+  font-weight: bold;
+  font-family:"Montserrat";
+  cursor: pointer;
+}
+.rose:hover{
+  background-color: #FF3B7B;
+}
+
+.rangButton{
+  padding:var(--PadGapTel);
+  display:flex;
+  flex-flow:row;
+  gap:0.5rem;
+}
+
+.sectionText {
+  background-color: #fff;
+  padding: var(--PadGapTel);
+}
+.sectionText td{
+  font-size: 1em;
+}
+#title h2 {
+  font-size: var(--Mh2);
+  font-weight: bold;
+}
+#title #ville_et_note {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+#title #ville_et_note #note {
+  /* display: flex; */
+  display: none; /*TEMPO sprint 1 */
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+#title #ville_et_note > p {
+  margin-right: 1.25rem;
+}
+#title #ville_et_note p {
+  font-size: var(--Mp);
+  font-weight: normal;
+}
+main svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+#title #ville_et_note svg {
+  margin: 0 0.313rem 0 0;
+}
+
+#firstBlocPc .price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 1.25rem 0 0.313rem 0;
+}
+#title .price .numPrice {
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--prix1);
+  color: var(--pink);
+  margin-right: 0.438rem;
+}
+#title .price .parNuit {
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--Mnuit);
+  line-height: var(--prix1);
+}
+#auteur_PC {
+  display: none;
+}
+.button {
+  display: block;
+  background-color: var(--pink);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  font-size: var(--button);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: var(--pink-hover);
+}
+.auteur svg {
+  height: 1rem;
+  width: 1rem;
+  margin-bottom: -0.125rem;
+}
+.auteur p,
+.auteur a {
+  cursor: default; /*TEMPO pour le sprint 1*/
+  font-size: var(--Mp);
+  font-weight: 600;
+  color: var(--gray);
+  font-family: 'Quicksand', sans-serif;
+}
+#description > p {
+  font-size: var(--Mp);
+  margin-top: var(--PadGapTel);
+  font-family: 'Quicksand', sans-serif;
+}
+.voirPlus,
+.voirMoins {
+  color: var(--pink);
+  background-color: transparent;
+  border: none;
+  font-size: var(--Mp);
+  text-decoration: underline;
+  cursor: pointer;
+}
+#CalendarVide {
+  display: none;
+  font-size: var(--Mp);
+  color: red;
+}
+#elements div:first-child {
+  margin-bottom: 1.5rem;
+}
+#elements h3 {
+  font-size: var(--Mh3);
+  font-weight: 500;
+  margin-bottom: var(--PadGapTel);
+}
+#elements p {
+  font-size: var(--Mp);
+  font-family: 'Quicksand', sans-serif;
+}
+
+#reservation, #reservationM {
+  margin: 0;
+}
+#reservation .price, #reservationM .price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#reservation .price .numPrice, #reservationM .price .numPrice {
+  text-align: center;
+  font-weight: bold;
+  margin-right: 0.438rem;
+  font-size: var(--prix1);
+  color: var(--pink);
+}
+#reservation .price .parNuit, #reservationM .price .parNuit {
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--Mnuit);
+
+  line-height: var(--prix1);
+}
+#reservation #nbPers, #reservationM #nbPers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: var(--PadGapTel) 0 0 0;
+  font-size: var(--Mp);
+  text-align: center;
+}
+#reservation .number, #reservationM .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--Mp);
+  margin: 0.5rem 0 0 0;
+}
+
+#minus,
+#plus {
+  cursor: pointer;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--pink);
+  font-weight: bold;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+#minus svg,
+#plus svg {
+  width: 1rem;
+  height: 1rem;
+}
+#minus {
+  background-color: var(--background-color);
+  cursor: auto;
+  color: var(--pink);
+}
+#plus {
+  background-color: var(--pink);
+  color: white;
+}
+
+#quantity {
+  appearance: textfield;
+}
+#quantity {
+  height: 2rem;
+  width: 4rem;
+  text-align: center;
+  font-size: 1.25rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+
+/* Calendar container */
+.container-calendar {
+  margin: var(--PadGapTel) 0;
+  background: var(--background-color);
+  padding: var(--PadGapTel);
+  width: 100%;
+  max-width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Buttons in the calendar */
+.button-container-calendar {
+  width: 100%;
+}
+.button-container-calendar button {
+  background: var(--pink);
+  color: #fff;
+  border: 1px solid var(--pink);
+  border-radius: 0.75rem;
+  padding: 5px 10px;
+  margin: 0 0.125rem;
+  cursor: pointer;
+}
+.button-container-calendar #previous {
+  cursor: default;
+  background-color: var(--background-color);
+  color: var(--pink);
+  font-weight: bold;
+}
+/* Calendar table */
+.table-calendar {
+  border-collapse: separate;
+  border-spacing: 0.125rem;
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+  table-layout: auto;
+}
+
+.table-calendar td,
+.table-calendar th {
+  /* width: 14%; */
+  padding: 0.25rem 0.25rem;
+  text-align: center;
+  border-radius: 0.75rem;
+  /* background-color: var(--pink); */
+}
+@media screen and (min-width: 350px) {
+  .table-calendar {
+    table-layout: fixed;
+  }
+  .table-calendar td,
+  .table-calendar th {
+    padding: 0.5rem 0.25rem;
+  }
+}
+.table-calendar td span,
+.table-calendar th span {
+  width: fit-content;
+  font-size: var(--Mp);
+}
+
+/* Date picker */
+.date-picker {
+  border: 1px solid transparent;
+}
+.date-picker.today {
+  font-weight: bold;
+  outline: 1px dashed #00bcd4;
+}
+
+.date-picker.today span {
+  border-bottom: 2px solid currentColor;
+}
+
+/* Hover effect for date cells */
+.date-picker:hover {
+  background-color: var(--pink-hover-calendar);
+  color: white;
+  cursor: pointer;
+}
+/* Hover effect for date cells */
+.selected {
+  background-color: var(--pink);
+  color: white;
+}
+.end {
+  background-color: var(--pink-hover);
+}
+/* Hover effect for date cells */
+.selectedIn {
+  background-color: var(--background-color);
+  border: 1px solid var(--pink);
+  color: var(--pink);
+}
+
+.date-before {
+  color: var(--gray);
+  cursor: default;
+  border: 1px solid transparent;
+}
+
+/* Header for month and year */
+#monthAndYear {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Navigation buttons */
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+
+/* Footer styling */
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+.footer-container-calendar #year {
+  margin-left: 3.85rem;
+  margin-right: 3.85rem;
+}
+.footer-container-calendar select {
+  cursor: pointer;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+
+#reservation #btnReserver, #reservationM #btnReserver {
+  width: 100%;
+  border-radius: var(--borderRadius);
+  font-family: 'Montserrat', sans-serif;
+}
+#firstPriceLaptop {
+  display: none;
+}
+#titreDevis{
+
+  width: 100%;
+  text-align: center;
+  padding-bottom: var(--PadGapTel);
+}
+#reservation{
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+#reservationM{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: var(--PadGapTel);
+}
+.tabBorderBottom{
+  padding-bottom: var(--PadGapTel);
+  margin-bottom: var(--PadGapTel);
+  border-bottom: 1px solid #ddd;
+}
+#recapitulatif-table{
+  font-variant-numeric: tabular-nums;
+}
+#reservationMcontainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#image_logementTablet{
+  display: none;
+}
+
+/* Tablets */
+@media (min-width: 481px) {
+  main {
+    padding: var(--PadMainTablet);
+    display: flex;
+    flex-direction: column;
+  }
+  .bloc {
+    margin-bottom: 0;
+  }
+  .sectionText,
+  #firstBlocPc {
+    padding: var(--PadGapTablet);
+  }
+  #firstBlocPc {
+    display: flex;
+    flex-direction: column;
+    /* background-color: var(--background-color); */
+    width: 100%;
+    border-radius: var(--borderRadius);
+    padding: 0;
+
+  }
+  #image_logement {
+    order: 2;
+    height: 15.625rem;
+    margin: var(--PadGapTablet) 0;
+  }
+  #title {
+    order: 1;
+    margin-bottom: var(--PadGapTablet);
+  }
+
+  #title h2 {
+    width: 100%;
+  }
+  #title #title_ville_note {
+    width: 100%;
+  }
+  #title #ville_et_note {
+    margin: 0;
+  }
+  #title .price {
+    display: none;
+  }
+  #firstPriceLaptop {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #description > p {
+    margin-top: var(--PadGapTablet);
+  }
+  #description .price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: var(--PadGapTablet) 0;
+  }
+  #description .price .numPrice {
+    text-align: center;
+    font-weight: bold;
+    color: var(--pink);
+    font-size: var(--prix1);
+    margin-right: 0.438rem;
+  }
+  #description .price .parNuit {
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--Mnuit);
+    line-height: var(--prix1);
+  }
+  #lienReserverM {
+    display: none;
+  }
+  #lienReserverLaptop {
+    width: 18.75rem;
+  }
+  #description {
+    order: 4;
+  }
+  #elements {
+    order: 5;
+    width: 100%;
+    margin-bottom: var(--PadGapTablet);
+  }
+  #reservation, #reservationM {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #reservation {
+    display: none;
+  }
+  #reservationMcontainer{
+    order:3;
+    width: 100%;
+    background-color: var(--background-color);
+    border-radius: var(--borderRadius);
+    margin-bottom: var(--PadGapTablet);
+  }
+  /* Calendar container */
+  .container-calendar {
+    margin: var(--PadGapTablet) 0;
+    padding: var(--PadGapTablet);
+    width: 25rem;
+    max-width: 100%;
+  }
+  .button-container-calendar button {
+    margin: 0 0.25rem;
+  }
+  /* Calendar table */
+  .table-calendar {
+    width: 100%;
+    border-spacing: 0.25rem;
+  }
+  .table-calendar td,
+  .table-calendar th {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .footer-container-calendar #year {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #reservation #btnReserver, #reservationM #btnReserver {
+    width: 25rem;
+    max-width: 100%;
+  }
+
+  #elements div:first-child {
+    margin-bottom: var(--PadGapTablet);
+  }
+  #elements h3 {
+    font-size: var(--h4);
+    margin-bottom: 0.5rem;
+  }
+  #firstBlocPc {
+    align-items: center;
+  }
+  #reservationM {
+    max-width: 40rem;
+    margin-bottom: 0;
+  }
+  /* .button {
+      font-size: var(--button);
+    } */
+  #image_logementTablet {
+    display: block;
+    border-radius: var(--borderRadius);
+    object-fit: cover;
+    height: 15.625rem;
+    margin: var(--PadGapTablet) 0 0 0;
+    /* background-color: var(--background-color); */
+  }
+  #image_logement {
+    display: none;
+  }
+}
+
+/* Laptops */
+
+@media (min-width: 769px) {
+  #title h2 {
+    font-size: var(--h2);
+  }
+  .auteur p,
+  #title #title_ville_note p,
+  #description > p,
+  #elements p,
+  #reservation #nbPers, #reservationM #nbPers,
+  #reservation #nbPers div, #reservationM #nbPers div {
+    font-size: var(--p);
+  }
+  #title .price .numPrice {
+    font-size: var(--prix1);
+  }
+  #title .price .parNuit {
+    font-size: var(--nuit);
+    line-height: var(--prix1);
+  }
+  main {
+    padding: var(--PadMainLaptop);
+  }
+  .sectionText {
+    padding: var(--PadGapLaptop);
+  }
+  
+  #reservation #nbPers, #reservationM #nbPers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  #reservation #nbPers > div, #reservationM #nbPers > div {
+    margin: 0 0 0 0.5rem;
+  }
+  #firstPriceLaptop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: var(--PadGapLaptop);
+  }
+  #firstPriceLaptop .price {
+    width: 300px;
+    margin: 0;
+  }
+  #description > p {
+    margin-top: var(--PadGapLaptop);
+  }
+  #image_logement {
+    margin: var(--PadGapLaptop) 0;
+  }
+  
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+  main {
+    padding: var(--PadMainDesktop);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .bloc {
+    margin-bottom: 0;
+  }
+  .sectionText {
+    padding: 1.5rem;
+  }
+  #infos_logement {
+    height: fit-content;
+    margin-right: var(--PadMainDesktop);
+  }
+  #title,
+  #description {
+    padding: 0;
+  }
+  #firstBlocPc {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    width: 100%;
+    padding: var(--PadGapDesktop);
+    border-radius: var(--borderRadius);
+
+    margin-bottom: var(--PadGapDesktop);
+  }
+  #image_logement {
+    order: 2;
+    height: 15.625rem;
+    margin-bottom: var(--PadGapDesktop);
+  }
+  #title {
+    order: 1;
+    margin: 0;
+  }
+
+  #title h2 {
+    font-size: var(--h2);
+    width: 100%;
+  }
+  #title #title_ville_note {
+    width: 100%;
+  }
+  #title #ville_et_note {
+    margin: 0;
+  }
+  #title #ville_et_note p {
+    font-size: var(--p);
+  }
+  #title .price,
+  #lienReserverM,
+  #description #firstPriceLaptop {
+    display: none;
+  }
+  #description {
+    order: 3;
+  }
+  #description div p,
+  #description div a {
+    font-size: var(--p);
+  }
+  #description > p {
+    font-size: var(--p);
+  }
+  #elements {
+    order: 4;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  #elements h3 {
+    font-size: var(--h3);
+  }
+  #elements p {
+    font-size: var(--p);
+  }
+
+  #reservation {
+    width: 18.75rem;
+    min-width: 18.75rem;
+    height: fit-content;
+    max-width: auto;
+    top: 0;
+    position: sticky;
+  }
+  #reservation .price {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  #reservation .price .numPrice {
+    font-size: var(--prix2);
+  }
+  #reservation .price .parNuit {
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--nuit);
+    line-height: var(--prix2);
+  }
+  #reservation #nbPers {
+    font-size: var(--p);
+    margin: var(--PadGapDesktop) 0 0 0;
+  }
+  #reservation #nbPers .number {
+    margin: 0.5rem 0 0 0;
+  }
+  #reservation #nbPers > div {
+    margin: 0;
+  }
+  /* Calendar container */
+  .container-calendar {
+    margin: var(--PadGapDesktop) 0;
+    padding: 0;
+    box-shadow: none;
+    width: fit-content;
+  }
+  /* Calendar table */
+  .table-calendar {
+    border-spacing: 0.125rem;
+    max-width: 100%;
+    border: 0;
+  }
+  .table-calendar td,
+  .table-calendar th {
+    padding: 0.4rem 0;
+    /* border: 1px solid black; */
+  }
+  #reservation form,
+  #reservation form #btnReserver {
+    width: 100%;
+  }
+  .footer-container-calendar #year {
+    margin-left: 3.85rem;
+  }
+  #reservationMcontainer{
+    display: none;
+  
+  }
+  #reservation{
+    display: flex;
+  }
+  #image_logementTablet{
+    display: none;
+  
+  }
+  #image_logement{
+    display: block;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1201px) {
+  #auteur_PC {
+    display: block;
+    padding-left: 10px;
+  }
+  #auteur_mobile {
+    display: none;
+  }
+  #titreAuteur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #auteur_PC p {
+    text-wrap: nowrap;
+  }
+  #title #ville_et_note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #title #ville_et_note #note {
+    margin: 0.25rem 0 0 0;
+  }
+  #description > p {
+    margin-top: 0;
+  }
+  #infos_logement {
+    width: 46.875rem;
+    margin-right: 3rem;
+  }
+  #reservation {
+    width: 18.75rem;
+    position: sticky;
+  }
+
+}

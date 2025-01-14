@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mobile-header-color: #fff;
+  --mobile-footer-color: #fff;
+  --border-color: #d3d3d3;
+  --background-color: #ffff;
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html {
+  min-height: calc(100% + env(safe-area-inset-top));
+  background-color: var(--background-color);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout elements */
+#header-mobile,
+.notch,
+#footer-mobile {
+  z-index: 1000;
+}
+
+#header-mobile,
+.notch {
+  top: 0;
+}
+
+#footer-mobile {
+  bottom: 0;
+  height: 4rem;
+  position: relative;
+  background-color: var(--mobile-footer-color);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+#footer-spacer {
+  width: 100%;
+  background-color: var(--mobile-footer-color);
+}
+
+#home,
+#reservations,
+#account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+}
+
+#home,
+#reservations {
+  cursor: pointer;
+}
+
+.footer-current-page {
+  color: #f57393;
+  fill: #f57393;
+}
+
+#footer-mobile svg {
+  height: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.notch {
+  position: relative;
+  width: 100%;
+  height: env(safe-area-inset-top);
+  background-color: var(--mobile-header-color);
+}
+
+.home-indicator {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: env(safe-area-inset-bottom);
+  background-color: var(--mobile-footer-color);
+}
+
+/* Header styles */
+#header-mobile {
+  position: relative;
+  width: 100%;
+  padding: 0.7rem 0;
+  border-bottom: 0.5px solid #ddd;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mobile-header-color);
+}
+
+.header-title h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-back {
+  position: absolute;
+  left: 1rem;
+}
+
+.header-back a {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-back img {
+  margin: 0;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  z-index: 2000;
+}
+
+/* Main content styles */
+main {
+  flex-grow: 1;
+  max-height: 100%;
+  height: 100%;
+  overflow: auto;
+
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+#header-desktop,
+#footer-desktop {
+  display: none;
+}
+
+#footer-left a {
+  text-decoration: none;
+  color: black;
+}
+
+/** Header desktop **/
+#header-container {
+  background-color: white;
+  width: 100%;
+  height: 5.5rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1.97rem 3.1rem;
+}
+
+#header-publish > span {
+  width: max-content;
+}
+
+#header-publish {
+  align-items: center;
+  display: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  gap: 1rem;
+  color:white;
+  font-size: 14px;
+  background-color: #738DA9;
+  padding: 0.98rem 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#header-content {
+  width: 100%;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+}
+
+#header-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+#header-logo {
+  display: flex;
+}
+
+#header-login {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  padding: 0.45rem 1.1rem;
+  background-color: #F57393;
+  border-radius: 8px;
+  color: white;
+  gap: 1rem;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+}
+
+.header-welcome-text {
+  font-size: 14px;
+}
+
+.header-user {
+  font-size: 14px;
+  font-weight: bold;
+  width: max-content;
+}
+
+.header-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+#header-login-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-large-logo {
+  display: none;
+  width: 17rem;
+}
+
+.header-small-logo {
+  width: 4rem;
+}
+
+/** Menu Burger **/
+#header-menu {
+  align-content: center;
+}
+
+#header-menu-icon {
+  width: 2rem;
+}
+
+/** Search bar **/
+.header-barre-recherche-desktop{
+  display: flex;
+}
+
+.header-lien-boutons {
+  margin: 5px 5px 5px 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: small;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.header-lien-boutons > span {
+  display: none;
+  font-weight: 600;
+}
+
+.header-barre-recherche-desktop {
+  background-color: #ECEFF2;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.header-lien-boutons:last-child{
+  color: #FFFFFF;
+  background-color: #F57393;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 14px 23px;
+}
+
+.header-barre-recherche-desktop img {
+  width: 25px;
+  height: 25px;
+  margin-right: 0;
+}
+
+/** Footer Desktop **/
+#footer-desktop {
+  display: none;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #D3D3D3;
+  padding: 0.35rem 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+#footer-left {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  flex-direction: row;
+}
+
+#footer-right {
+  display: none;
+  font-size: 0.75rem;
+  align-content: center;
+}
+
+/* Tablets */
+@media (min-width: 481px) {
+  #header-mobile,
+  #footer-mobile,
+  .notch,
+  .home-indicator {
+    display: none;
+  }
+
+  #header-desktop {
+    display: block;
+  }
+
+  #header-container {
+    padding: 1.15rem 1.6rem;
+  }
+
+  #footer-desktop {
+    display: flex;
+  }
+}
+
+/* Laptops */
+@media (min-width: 911px) {
+  #header-publish {
+    display: flex;
+  }
+  #header-login {
+    display: flex;
+  }
+  #header-menu {
+    display: none;
+  }
+  #footer-right {
+    display: block;
+  }
+  #footer-left {
+    font-size: 0.75rem;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1080px) {
+  #header-buttons {
+    gap: 1rem;
+  }
+  .header-small-logo {
+    display: none;
+  }
+  .header-large-logo {
+    display: block;
+  }
+  .header-lien-boutons:last-child{
+    padding: 14px 15px;
+  }
+  #header-container {
+    padding: 1.15rem 1.6rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1420px) {
+  .header-lien-boutons > span {
+    display: block;
+  }
+  .header-barre-recherche-desktop img {
+    margin-right: 5px;
+  }
+}
+
+
+/** BO **/
+
+#header-bo-desktop {
+  width: fit-content;
+}
+
+.placeholder-hover {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin-left: 200px;
+  opacity: 0.8;
+  background-color: #ccccccf4;
+  z-index: 99999;
+  position: absolute;
+}
+
+.image-header {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  top: 12px;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.3rem 0.2rem;
+}
+
+#BO-logout {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  justify-content: start;
+  display: flex;
+  font: inherit;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  outline: inherit;
+  font-size: 14px;
+}
+
+#header-bo-desktop > .main-menu:hover,nav.main-menu.expanded {
+  width:fit-content;
+  overflow:visible;
+}
+
+.show-menu {
+  display: block;
+}
+
+#header-bo-desktop > .main-menu {
+  background: #ffffff;
+  border-right:1px solid #e5e5e5;
+  position:absolute;
+  top:0;
+  bottom:0;
+  height:100%;
+  left:0;
+  width:60px;
+  overflow:hidden;
+  -webkit-transition:width .05s linear;
+  transition:width .05s linear;
+  -webkit-transform:translateZ(0) scale(1,1);
+  z-index:1000;
+}
+
+#header-bo-desktop > .main-menu li:not(:first-child) {
+  position:relative;
+  display:block;
+  margin: 5px 0;
+  width: fit-content;
+}
+
+#logout {
+  height: 3.5rem;
+  align-content: center;
+}
+
+#header-bo-desktop > .main-menu li>a {
+  position:relative;
+  display:table;
+  border-collapse:collapse;
+  height: 3.5rem;
+  border-spacing:0;
+  color:#999;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-decoration:none;
+  -webkit-transform:translateZ(0) scale(1,1);
+  -webkit-transition:all .1s linear;
+  transition:all .1s linear;
+
+}
+
+#header-bo-desktop > .main-menu .nav-icon {
+  position:relative;
+  display:table-cell;
+  width:60px;
+  height:36px;
+  text-align:center;
+  vertical-align:middle;
+  font-size:18px;
+}
+
+#header-bo-desktop > .main-menu .nav-text {
+  position: relative;
+  align-self: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 140px;
+  text-align: start;
+  color: black;
+}
+
+#header-bo-desktop > .main-menu>ul.logout {
+  position:absolute;
+  left:0;
+  bottom:0;
+}
+
+
+#BO-logout > img {
+  top: 0 !important;
+}
+
+#header-bo-desktop > .no-touch .scrollable.hover {
+  overflow-y:hidden;
+}
+
+#header-bo-desktop > .no-touch .scrollable.hover:hover {
+  overflow:visible;
+}
+
+#header-bo-desktop > a:hover,a:focus {
+  text-decoration:none;
+}
+
+#header-bo-desktop > nav {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+#header-bo-desktop > nav ul,nav li {
+  outline:0;
+  margin:0;
+  padding:0;
+}
+
+.logout-bo:hover {
+  color:#fff;
+  background-color: #efefef;
+}
+
+#header-bo-desktop > .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+  color:#fff;
+  background-color: #efefef;
+}
+
+#header-bo-desktop > .area {
+  float: left;
+  background: #e2e2e2;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.card {
+  width: 180px; /* Ajustez la largeur selon vos besoins */
+  min-height: 255px;
+  background-color: white; 
+  margin: 1em 0px 5px 0px;
+  border-radius: 12px;
+  flex: 1; /* Prend une largeur égale dans le conteneur Flexbox */
+  flex-direction: column; /* Arrange le contenu verticalement */
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 5px;  
+  }
+  .card a {
+    color: #333; 
+    text-decoration: none;
+  }
+  .card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+    object-position: center;
+  }
+
+  .nav-button{
+    display: none;
+  }
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 140px;
+
+}
+
+.nav-button img{
+  display: none;
+}
+
+.titre_logement{
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 2.5rem;
+}
+
+.barre-recherche-desktop{
+  display: none;
+}
+
+.card-title {
+  overflow:visible; /* Hide overflow */
+}
+
+.card-title h3{
+  font-size: medium;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width:165px;
+  color: black;
+}
+
+.card-excerpt p{
+  font-size: small;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space: wrap;
+}
+
+.card-excerpt::first-letter, .card-title::first-letter{
+  text-transform: uppercase;
+}
+
+.nav-button img{
+  cursor: pointer;
+}
+
+.image-barre-recherche-desktop {
+  display: flex;
+  height: 210px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-barre-recherche-desktop img{
+  width: 100%;
+}
+
+.bouton{
+  display: inline-block;
+  background-color: white;
+}
+
+.degemer-mat {
+  text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.degemer-mat h2{
+  font-size: 1.1rem;
+}
+
+.card-avis-icon img{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.card-avis-icon {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 0.3em;
+}
+
+
+.degemer-mat h1, .degemer-mat h2,
+.meilleurs-logements h2, .meilleurs-logements h3,
+.logement-prise h2, .logement-prise h3,
+.message-bienvenue h1, .lien-boutons{
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-body p{
+  font-family: "Quicksand";
+}
+
+.card-excerpt p{
+  font-size: 14px;
+}
+
+.card-body p strong, .card-excerpt p,
+.card-avis-icon{
+  color: #555555;
+}
+
+.card-body p strong{
+  color: #F57393;
+}
+
+body  main{
+  background-color: #FFFFFF ;
+  padding: 0;
+}
+
+.prix{
+  font-weight: bold;
+}
+
+.meilleurs-logements, .logement-prise{
+  
+  flex-wrap: wrap; 
+  column-gap: 1em;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.logement-prise{
+  margin-bottom: 2.5em;
+}
+
+.contenu-accueil{
+  padding: 0.5rem;
+  background-color: #f2f2f2 ;
+}
+
+.card-body .last-line {
+  display: flex; /* Mettre les éléments en mode flexbox */
+  align-items: center; /* Aligner verticalement au centre */
+  justify-content: space-between;
+}
+
+
+.card-body {
+  padding: 10px 10px 10px 10px;
+}
+
+.card-excerpt{
+  margin-top: -3px;
+  margin-bottom: 10px;
+}
+
+.card-body .card-avis:first-child {
+  margin-top: 0; /* Supprimer la marge du premier élément */
+}
+
+.logo-mobile img{
+  width: 50%;
+  height: auto;
+  position: absolute;
+  align-items: center;
+  top: 3%;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.logo-mobile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Make logo-mobile positioned absolutely */
+  top: 12%; /* Position logo-mobile vertically at 50% */
+  transform: translateY(-50%); /* Offset logo-mobile vertically by -50% to center it */
+  width: 100%; /* Make logo-mobile span the full width of the container */
+  z-index: 1;
+}
+
+.barre-recherche {
+  background-color: #ECEFF2;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /* Make barre-recherche a flex container */
+  align-items: center; /* Align items vertically within the container */
+  justify-content: space-between; /* Center items horizontally within the container */
+  border-radius: 8px;
+  width: auto;
+  height: auto;
+}
+
+.lien-boutons {
+  padding: 10px;
+  margin: 5px 5px 5px 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Enlève la sous-ligne par défaut */
+  color: inherit; /* Utilise la couleur du texte par défaut */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: small;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.logo-container {
+  display: block;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  width: 54%;
+}
+
+.logo-container > img {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.barre-recherche img {
+  width: 20px;
+  height: 20px;
+  display: block; /* Makes the image a block element */
+  border: none; /* Removes the default image border */
+}
+
+#home-page-search {
+  margin: auto;
+  top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.image-barre-recherche {
+  height: 215px;
+  overflow: hidden;
+  justify-content: center;
+  grid-template-rows: auto 1fr;  /* Allocate space for header and image */
+  align-items: flex-end; 
+  min-width: 100%;
+}
+
+.image-barre-recherche {
+    grid-template-columns: 1fr;  /* Define a single column for each element */
+    background-color: #F2F2F2;
+}
+
+
+.image-barre-recherche > img{
+    width: 100%;
+}
+
+.message-bienvenue{
+  display: none;
+  color: black;
+}
+
+@media (min-width: 481px) {
+  .logo-mobile{
+    display: none;
+  }
+  .message-bienvenue{
+    display: flex; /* Activer Flexbox */
+    flex-direction: column; /* Disposer les éléments verticalement par défaut */
+    align-items: center; /* Aligner les éléments horizontalement au début */
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  .message-bienvenue h1:first-child{
+    font-size: 45px;
+  }
+
+  .message-bienvenue h1:nth-child(2){
+    font-size: 18px;
+  }
+
+  .degemer-mat{
+    display: none;
+  }
+
+  .logo-container {
+    display:none;
+  }
+
+}
+
+
+/* Tablets */
+@media (min-width: 685px) {
+  .meilleurs-logements, .logement-prise{
+    margin-top: 0.1em;
+  }
+
+  .lien-boutons {
+    margin: 10px 9px 10px 9px;
+  }
+
+  #index-liens-boutons:last-child{
+    padding: 14px 15px;
+  }
+
+  .image-barre-recherche-desktop {
+    height: 330px;
+  }
+
+  #index-liens-boutons > span {
+    display: block;
+  }
+  
+  .card {
+    width: 180px;
+    min-height: 255px;
+    height: auto;
+    margin: 0px;
+    background-color: #FFFFFF; 
+    margin-top: 1em;
+    border-radius: 12px;
+    margin-right: 1em;
+  }
+
+  .contenu-accueil{
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .message-bienvenue{
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .message-bienvenue h1:first-child{
+    font-size: 45px;
+  }
+
+  .message-bienvenue h1:nth-child(2){
+    font-size: 18px;
+  }
+
+  .message-bienvenue{
+    margin-top: 3.5em;
+  }
+
+  .barre-recherche img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Laptops */
+@media (min-width: 769px) {
+  .nav-button img{
+    display:flex;
+    height: 20px;
+    align-items: baseline;
+  }
+
+  .nav-left{
+    display: flex;
+    transform: scaleX(-1);
+  }
+
+  .nav-button{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5em;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+
+  .message-bienvenue{
+    display: flex; /* Activer Flexbox */
+    flex-direction: column; /* Disposer les éléments verticalement par défaut */
+    align-items: center; /* Aligner les éléments horizontalement au début */
+    margin-bottom: 1rem;
+  }
+
+  .image-barre-recherche{
+    display: none;
+  }
+
+  .barre-recherche-desktop img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+  }
+
+  .lien-boutons {
+    padding: 8px 50px 8px 50px;
+    font-weight: 600;
+  }
+
+  .lien-boutons:last-child{
+    color: #FFFFFF;
+    background-color: #F57393;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 50px 10px 50px;
+  }
+
+  .message-bienvenue{
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;  
+  }
+  
+  .message-bienvenue h1:first-child, .message-bienvenue h1:nth-child(2){
+    font-size: 80px;
+    margin-right: 30px;
+  }
+
+  .message-bienvenue h1:nth-child(2){
+    font-size: 25px;
+  }
+
+  .titre_logement{
+    padding-top: 2.5rem;
+  }
+  
+  .card {
+    width: 250px;
+    margin: 1em 2em 1em 0px;
+    box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .meilleurs-logements, .logement-prise{
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .image-barre-recherche{
+    margin-bottom: 2.5em;
+    height: 40%;
+  }
+
+  .contenu-accueil{
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+
+  .card-title h3{
+    width:245px;
+  }
+  
+  .barre-recherche-desktop {
+    background-color: #ECEFF2;
+    position: relative;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; /* Make barre-recherche a flex container */
+    align-items: center; /* Align items vertically within the container */
+    border-radius: 8px;
+    width: fit-content;
+    z-index: 1;
+  }
+
+  .card-image{
+    height: 250px;
+  }
+
+  .titre_logement{
+    font-size: 32px;
+  }
+
+  .card-excerpt p{
+    white-space: nowrap;
+  }
+
+}
+
+@media (min-width: 1149px) {
+  .message-bienvenue{
+    display: flex;
+    align-items:baseline;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-direction: row;
+  }
+
+  #index-liens-boutons {
+    padding: 10px 45px;
+  }
+}
